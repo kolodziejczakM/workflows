@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verified workflow"
+  short_description: "Matt Pocock workflows with live application proof"
+  default_prompt: "Use $workflow quick to implement this task and verify the result in the client application."

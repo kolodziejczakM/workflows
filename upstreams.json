@@ -1,0 +1,43 @@
+{
+  "cliVersion": "1.7.2",
+  "agents": ["codex", "cursor", "claude-code"],
+  "sources": [
+    {
+      "id": "mattpocock",
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "licensePath": "LICENSE",
+      "skills": ["setup-matt-pocock-skills", "grilling", "grill-me", "grill-with-docs", "domain-modeling", "codebase-design", "to-spec", "to-tickets", "implement", "implement-spec", "tdd", "code-review", "pr", "retro", "writing-for-agents"]
+    },
+    {
+      "id": "pstack",
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "subpath": "pstack/skills",
+      "licensePath": "pstack/LICENSE",
+      "skills": ["create-verification-skill", "maintain-verification-skill", "blast-radius", "interrogate"],
+      "support": [
+        {"name": "why"},
+        {"name": "unslop"},
+        {"name": "poteto-mode", "selection": "Poteto Mode", "files": ["SKILL.md"]},
+        {"name": "arena"},
+        {"name": "principle-separate-before-serializing-shared-state"},
+        {"name": "principle-redesign-from-first-principles"},
+        {"name": "principle-laziness-protocol"},
+        {"name": "principle-prove-it-works"},
+        {"name": "show-me-your-work"},
+        {"name": "principle-encode-lessons-in-structure"}
+      ],
+      "resources": [
+        {"source": "pstack/docs/harness/claude-code.md", "target": "skills/workflow/references/upstream/pstack/claude-code.md"}
+      ]
+    },
+    {
+      "id": "emilkowalski",
+      "repository": "emilkowalski/skills",
+      "ref": "2d228630ba1446365f614a108cb8252f1feda202",
+      "licensePath": "LICENSE",
+      "skills": ["break-ui", "review-animations"]
+    }
+  ]
+}

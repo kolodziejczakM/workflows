@@ -1,0 +1,13 @@
+{
+  "name": "verified-ai-workflows",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Matt Pocock workflows with application verification and selected pstack and Emil Kowalski checks",
+  "license": "MIT",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "sync": "node scripts/sync-skills.mjs",
+    "check": "node scripts/check-bundle.mjs",
+    "pack:plugin": "node scripts/pack-plugin.mjs"
+  }
+}
