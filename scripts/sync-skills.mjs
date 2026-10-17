@@ -3,6 +3,7 @@ import { chmod, lstat, mkdir, readFile, readdir, readlink, rm, symlink, writeFil
 import { dirname, join, relative } from 'node:path';
 import { root, readJson, blobHash, sha256, findPinnedSkill } from './lib/bundle.mjs';
 import { retireImports } from './lib/retire-imports.mjs';
+import { download, fetchPinnedBlobs } from './lib/upstream.mjs';
 
 const config = await readJson('upstreams.json');
 const ledgerPath = join(root, 'upstream-files.json');
@@ -24,12 +25,6 @@ try {
   if (error.path !== ledgerPath) throw error;
 }
 
-async function download(url) {
-  const response = await fetch(url, { headers: { 'User-Agent': 'verified-ai-workflows' } });
-  if (!response.ok) throw new Error(`${response.status} fetching ${url}`);
-  return Buffer.from(await response.arrayBuffer());
-}
-
 async function filesIn(directory) {
   const result = [];
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -41,7 +36,7 @@ async function filesIn(directory) {
   return result.sort();
 }
 
-function stageVerifiedImport(target, data, { source, sourcePath, blobsByPath }) {
+function stageVerifiedImport(target, data, sourcePath, { source, blobsByPath }) {
   const expected = blobsByPath.get(sourcePath);
   if (!expected || blobHash(data) !== expected.sha) {
     throw new Error(`Upstream content mismatch: ${source.repository}/${sourcePath}`);
@@ -74,9 +69,8 @@ for (const source of config.sources) {
   }
 
   const lock = await readJson('skills-lock.json');
-  const treeResponse = JSON.parse(await download(`https://api.github.com/repos/${source.repository}/git/trees/${source.ref}?recursive=1`));
-  if (treeResponse.truncated) throw new Error(`Truncated source tree for ${source.id}`);
-  const blobsByPath = new Map(treeResponse.tree.filter((entry) => entry.type === 'blob').map((entry) => [entry.path, entry]));
+  const blobsByPath = await fetchPinnedBlobs(source);
+  const sourceContext = { source, blobsByPath };
   const license = await download(`https://raw.githubusercontent.com/${source.repository}/${source.ref}/${source.licensePath}`);
   const entries = [...source.skills.map((name) => ({ name, exported: true })), ...(source.support ?? [])];
 
@@ -92,17 +86,17 @@ for (const source of config.sources) {
       const suffix = relative(installed, path).replaceAll('\\', '/');
       const sourcePath = `${upstreamDirectory}/${suffix}`;
       const filename = !item.exported && suffix === 'SKILL.md' ? 'INSTRUCTIONS.md' : suffix;
-      stageVerifiedImport(`${outputDirectory}/${filename}`, await readFile(path), { source, sourcePath, blobsByPath });
+      stageVerifiedImport(`${outputDirectory}/${filename}`, await readFile(path), sourcePath, sourceContext);
     }
-    stageVerifiedImport(`${outputDirectory}/UPSTREAM-LICENSE.txt`, license, { source, sourcePath: source.licensePath, blobsByPath });
+    stageVerifiedImport(`${outputDirectory}/UPSTREAM-LICENSE.txt`, license, source.licensePath, sourceContext);
   }
 
   for (const resource of source.resources ?? []) {
     const data = await download(`https://raw.githubusercontent.com/${source.repository}/${source.ref}/${resource.source}`);
-    stageVerifiedImport(resource.target, data, { source, sourcePath: resource.source, blobsByPath });
+    stageVerifiedImport(resource.target, data, resource.source, sourceContext);
   }
   const supportLicense = `skills/workflow/references/upstream/${source.id}/LICENSE.txt`;
-  stageVerifiedImport(supportLicense, license, { source, sourcePath: source.licensePath, blobsByPath });
+  stageVerifiedImport(supportLicense, license, source.licensePath, sourceContext);
   notices.push(`## ${source.id}`, '', `Source: https://github.com/${source.repository}/tree/${source.ref}`, '', 'License: MIT. The full original notice follows.', '', license.toString('utf8').trim(), '');
 }
 

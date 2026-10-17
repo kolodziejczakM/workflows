@@ -1,18 +1,13 @@
 import assert from 'node:assert/strict';
 import { spawnSync } from 'node:child_process';
-import { access, cp, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
-import { tmpdir } from 'node:os';
+import { access, cp, readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import test from 'node:test';
 import { root, blobHash, sha256 } from '../lib/bundle.mjs';
+import { createFixture } from './fixtures.mjs';
 
-test('sync retires deselected exports and support, preserves custom files, and rejects edited imports', async (t) => {
-  const client = await mkdtemp(join(tmpdir(), 'workflow-sync-'));
-  t.after(() => rm(client, { recursive: true, force: true }));
-  const put = async (path, text) => {
-    await mkdir(join(client, path, '..'), { recursive: true });
-    await writeFile(join(client, path), text);
-  };
+async function syncFixture(t) {
+  const { root: client, put } = await createFixture(t, 'workflow-sync-');
   await cp(join(root, 'scripts'), join(client, 'scripts'), { recursive: true });
   const source = { id: 'example', repository: 'example/skills', ref: 'a'.repeat(40), licensePath: 'LICENSE', skills: ['current'] };
   await put('upstreams.json', JSON.stringify({ sources: [source] }));
@@ -40,6 +35,12 @@ test('sync retires deselected exports and support, preserves custom files, and r
     await import('./scripts/sync-skills.mjs');
   `);
   const run = () => spawnSync(process.execPath, ['mock-sync.mjs'], { cwd: client, encoding: 'utf8', timeout: 10000 });
+  return { client, put, run };
+}
+
+test('sync retires deselected exports and support, preserves custom files, and rejects edited imports', async (t) => {
+  const { client, put, run } = await syncFixture(t);
+  const skill = await readFile(join(client, '.agents/skills/current/SKILL.md'), 'utf8');
   const result = run();
   assert.equal(result.status, 0, result.stderr);
   await assert.rejects(access(join(client, 'skills/retired')), { code: 'ENOENT' });
@@ -54,4 +55,21 @@ test('sync retires deselected exports and support, preserves custom files, and r
   assert.match(rejected.stderr, /Imported file changed/);
   assert.equal(await readFile(join(client, 'upstream-files.json'), 'utf8'), ledger);
   assert.equal(await readFile(join(client, 'skills/current/SKILL.md'), 'utf8'), 'local modification');
+});
+
+test('sync rejects out-of-catalog ledger paths before any publication or retirement', async (t) => {
+  const { client, put, run } = await syncFixture(t);
+  await put('KEEP.md', 'user-owned');
+  const ledger = JSON.parse(await readFile(join(client, 'upstream-files.json'), 'utf8'));
+  ledger.files['KEEP.md'] = { sha256: sha256('user-owned') };
+  const recorded = JSON.stringify(ledger);
+  await put('upstream-files.json', recorded);
+  const before = new Map();
+  for (const path of Object.keys(ledger.files)) before.set(path, await readFile(join(client, path), 'utf8'));
+  const result = run();
+  assert.notEqual(result.status, 0);
+  assert.match(result.stderr, /outside the skill catalog/);
+  assert.equal(await readFile(join(client, 'upstream-files.json'), 'utf8'), recorded);
+  for (const [path, data] of before) assert.equal(await readFile(join(client, path), 'utf8'), data);
+  await assert.rejects(access(join(client, 'skills/current/UPSTREAM-LICENSE.txt')), { code: 'ENOENT' });
 });
