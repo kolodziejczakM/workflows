@@ -26,4 +26,4 @@ npx --yes skills@1.7.2 add /absolute/path/to/workflows --skill '*' --agent codex
 
 Run that command from an isolated client, not this source repository. Verify discovery, installed file contents, licenses, companion references, and Claude links. Use the generated plugin directory to test native hosts. JSON/manifest checks establish package structure, not successful end-to-end behavior in every agent runtime.
 
-`dist/workflows/` is a self-contained plugin directory. This task prepares files only; GitHub publication, releases, and official marketplace submissions are separate actions. The client application's generated verifier and run evidence are created in the client, never in the published bundle.
+`dist/workflows/` is a self-contained plugin directory. `pack:plugin` prepares files only; GitHub publication, releases, and official marketplace submissions are separate actions. The client application's generated verifier and run evidence are created in the client, never in the published bundle.
