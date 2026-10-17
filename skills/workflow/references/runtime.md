@@ -32,6 +32,12 @@ Matt's `implement` requests `code-review` before its final commit, while that re
 
 After accepted review fixes, ensure the new intended result is committed where required and review the updated range. This is an execution-order adapter; both upstream files remain byte-for-byte unchanged. Check the final dirty-tree status so later uncommitted changes cannot inherit an earlier verdict.
 
+## PR lifecycle for feature and build
+
+Unless the user opts out, pass an explicit PR request to `implement-spec` for `feature` and `build`, including when the issue tracker uses local files. Carry a local-only/no-PR override into that stage so its tracker-based PR behavior respects the override. Use the client's Git host and intended base branch. After the first ticket merge provides publishable commits, push the task integration branch and open a draft PR; reuse an existing PR for this task instead of creating a duplicate. Route invocation supplies authorization for these task-branch pushes and PR updates unless the user specifies local-only work or no PR. Preserve planning confirmations before implementation.
+
+Defer `implement-spec`'s final mark-ready action until the outer workflow completes verification and required reviews. Keep the PR draft while proof is failed, blocked, or pending; if an existing task PR is already ready and this run starts further implementation or proof is unresolved, return it to draft. Ensure accepted task changes are committed and covered by the final proof and review. After all required checks pass on that revision, push the verified result, use `pr` to refresh the description with actual evidence, and mark the PR ready. Further product edits require fresh proof before readiness. Missing remote access, credentials, or host tooling is a publication blocker to report, not a reason to silently skip the PR or request confirmation already supplied by the mode. Merge and deployment remain separate actions.
+
 ## Reference-only pstack support
 
 The following upstream resources are packaged inside this skill, outside discovery as independent coordinators. Resolve their names here when a selected check references them. Read only the named section when one is specified; the rest of that file does not activate a workflow.

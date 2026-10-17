@@ -20,15 +20,17 @@ In Codex, use the examples below. In Claude Code or Cursor, replace `$workflow` 
 | --- | --- | --- |
 | Small, clear change | `$workflow quick Add JSON output to the export command` | `implement` → verify |
 | Discuss before coding | `$workflow discuss Add bulk archive` | `grill-me` → `implement` → verify |
-| Larger feature | `$workflow feature Add team invitations` | `grill-with-docs` → `to-spec` → `to-tickets` → `implement-spec` → verify |
-| Build approved tickets | `$workflow build Implement the spec at docs/specs/invitations.md` | `implement-spec` → verify |
+| Larger feature | `$workflow feature Add team invitations` | `grill-with-docs` → `to-spec` → `to-tickets` → `implement-spec` → verify → ready PR |
+| Build approved tickets | `$workflow build Implement the spec at docs/specs/invitations.md` | `implement-spec` → verify → ready PR |
 | Check existing work | `$workflow verify Check this branch against main and its spec` | Verify and report findings; no automatic product fixes |
 
 The first build runs Matt's setup for the client's tracker and domain docs. Planning preserves his decision and approval checkpoints.
 
 Verification reuses or creates the **client's** `verify-<app>` skill, exercises acceptance criteria, reviews the final diff, and selects relevant extra checks. Build routes fix accepted findings and reverify. Missing tools or model diversity are reported, never counted as passes.
 
-You can keep using Matt's skills individually, then run `$workflow verify`. Use `$pr` after proof or `$retro` after the session. Publishing and merging require authorization.
+`feature` and `build` automatically push the task branch and create or update a PR, without a separate confirmation. The PR stays draft during implementation and becomes ready after verification passes. Say "local only" or "no PR" to opt out; unavailable Git hosting access is reported as a blocker.
+
+You can keep using Matt's skills individually, then run `$workflow verify`. In other modes, request a PR or use `$pr` after proof. Use `$retro` after the session. Merging and deployment require separate authorization.
 
 ## Native plugins, optional
 

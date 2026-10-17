@@ -13,8 +13,8 @@ Keep Matt's implementation flow and add proof of its output. Imported skill file
 | --- | --- |
 | `quick` | `implement`, then verification below. |
 | `discuss` | `grill-me`, then `implement`, then verification. |
-| `feature` | `grill-with-docs`, `to-spec`, `to-tickets`, `implement-spec`, then verification. |
-| `build` | Read the supplied spec and tickets, run `implement-spec`, then verification. |
+| `feature` | `grill-with-docs`, `to-spec`, `to-tickets`, `implement-spec`, then verification and a ready PR. |
+| `build` | Read the supplied spec and tickets, run `implement-spec`, then verification and a ready PR. |
 | `verify` | Verify the existing change without starting a planning or implementation flow. |
 
 Use the requested mode. If no mode was supplied, choose `quick` for a clear task, `discuss` for unresolved requirements, or `feature` for a multi-session build, and state the choice. Ask for a task if none was given.
@@ -27,7 +27,9 @@ The client is the application repository the user is working on. Keep its root s
 
 Capture the starting revision, existing dirty files, relevant acceptance criteria, and a fixed review base before implementation. Use a supplied base when given; otherwise freeze the starting `HEAD`. For `verify`, use the supplied change range or determine the feature branch's merge-base with its actual target branch. If the range is ambiguous, ask rather than picking a range that omits the change.
 
-For a build route, run `setup-matt-pocock-skills` if the client's tracker/domain configuration is absent. Keep its confirmation steps. Reuse configured trackers, standards, glossary, and ADRs. The skill grants no additional authority to publish, merge, deploy, contact people, or change global configuration.
+In `feature` and `build`, creating/updating the task PR and pushing its branch are part of the requested route; proceed without a separate PR confirmation unless the user opts out. Follow the draft-to-ready lifecycle in the runtime adapter.
+
+For a build route, run `setup-matt-pocock-skills` if the client's tracker/domain configuration is absent. Keep its confirmation steps. Reuse configured trackers, standards, glossary, and ADRs. PR publication follows the mode-specific scope above; merging, deploying, contacting people, and global configuration changes require their own authorization.
 
 Carry the task, approved decisions, spec/ticket references, fixed base, current phase, and evidence paths across handoffs. Keep useful run notes in a task-specific directory under the client's `.scratch/workflow/`; keep that directory out of task commits unless the user wants an auditable artifact.
 
@@ -54,6 +56,6 @@ If a selected check cannot run, mark that check blocked. Never substitute CSS in
 
 Before declaring verified, compare the current revision and working tree with the code actually exercised and reviewed. Refresh affected evidence after any intervening product edit, fixture change, merge, or rebase. Use a fresh launch where needed so a stale process cannot certify a newer build.
 
-Report the final revision, each acceptance criterion and its evidence, selected review outcomes, and remaining blockers. Verified means every required check passed on the current result. Distinguish implementation completion, upstream tracker/PR state, and verification completion: `implement-spec` may resolve tickets or mark a PR ready before this outer proof phase.
+Report the final revision, each acceptance criterion and its evidence, selected review outcomes, and remaining blockers. Verified means every required check passed on the current result. Distinguish implementation completion, tracker state, and verification completion. Apply the runtime adapter so the task PR stays draft until this outer proof phase passes.
 
-When the user requests PR preparation, invoke `pr` after proof to write the body with real evidence. Publish only within the user's authorization. `retro` remains available after the session; do not run a second planning coordinator or edit upstream skills to record lessons.
+For `feature` and `build` with PR publication enabled, invoke `pr` after proof, update the task PR with real evidence, and mark it ready without asking for a separate confirmation. For other modes, prepare or publish a PR when requested. `retro` remains available after the session; do not run a second planning coordinator or edit upstream skills to record lessons.
