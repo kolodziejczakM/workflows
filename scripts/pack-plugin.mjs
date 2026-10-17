@@ -1,9 +1,8 @@
 import { cp, mkdir, rm } from 'node:fs/promises';
 import { spawnSync } from 'node:child_process';
 import { join } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { root } from './lib/bundle.mjs';
 
-const root = fileURLToPath(new URL('../', import.meta.url));
 const check = spawnSync(process.execPath, ['scripts/check-bundle.mjs'], { cwd: root, stdio: 'inherit' });
 if (check.status !== 0) process.exit(check.status ?? 1);
 const output = join(root, 'dist/workflows');

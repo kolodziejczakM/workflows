@@ -48,6 +48,6 @@ Claude plugins use `/workflows:workflow quick ...`; select the qualified skill i
 
 ## Maintain this bundle
 
-`npm run check` checks integrity and packaging. Update refs in `upstreams.json`, run `npm run sync`, and review the diff. `npm run pack:plugin` builds `dist/workflows/`.
+`npm ci` installs development tools. `npm test` runs regressions; `npm run check` checks recorded snapshots and metadata offline. `npm run check:upstream` verifies against pinned GitHub trees. Update refs in `upstreams.json`, run `npm run sync`, and review the diff. `npm run pack:plugin` builds `dist/workflows/`.
 
 See [maintenance](docs/maintaining.md), [source research](docs/research/ai-workflow.md), and [third-party notices](THIRD_PARTY_NOTICES.md). The custom glue is MIT; imported skills retain their original licenses and credits.

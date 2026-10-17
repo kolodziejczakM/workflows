@@ -1,5 +1,7 @@
 # Third-party notices
 
+The development-only Agent Plugins schema is Apache-2.0; see scripts/schemas/NOTICE.md and its accompanying license. It is not included in installed skills or the plugin directory.
+
 Imported skill files retain their upstream contents. Original MIT notices are included in every exported skill and in the workflow support resources.
 
 ## mattpocock

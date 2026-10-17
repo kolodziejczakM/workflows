@@ -1,21 +1,18 @@
-import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
-import { chmod, lstat, mkdir, readFile, readdir, readlink, rm, rmdir, symlink, unlink, writeFile } from 'node:fs/promises';
+import { chmod, lstat, mkdir, readFile, readdir, readlink, rm, symlink, writeFile } from 'node:fs/promises';
 import { dirname, join, relative } from 'node:path';
-import { fileURLToPath } from 'node:url';
+import { root, readJson, blobHash, sha256, findPinnedSkill } from './lib/bundle.mjs';
+import { retireImports } from './lib/retire-imports.mjs';
 
-const root = fileURLToPath(new URL('../', import.meta.url));
-const config = JSON.parse(await readFile(join(root, 'upstreams.json'), 'utf8'));
+const config = await readJson('upstreams.json');
 const ledgerPath = join(root, 'upstream-files.json');
-const blobHash = (data) => createHash('sha1').update(`blob ${data.length}\0`).update(data).digest('hex');
-const sha256 = (data) => createHash('sha256').update(data).digest('hex');
 const ledger = { version: 1, files: {} };
 const staged = new Map();
 const outputDirectories = new Set();
 let previousFiles = {};
 
 try {
-  previousFiles = JSON.parse(await readFile(ledgerPath, 'utf8')).files;
+  previousFiles = (await readJson('upstream-files.json')).files;
   for (const [path, record] of Object.entries(previousFiles)) {
     const current = await readFile(join(root, path));
     if (sha256(current) !== record.sha256) {
@@ -44,8 +41,8 @@ async function filesIn(directory) {
   return result.sort();
 }
 
-async function save(target, data, source, sourcePath, tree) {
-  const expected = tree.get(sourcePath);
+function stageVerifiedImport(target, data, { source, sourcePath, blobsByPath }) {
+  const expected = blobsByPath.get(sourcePath);
   if (!expected || blobHash(data) !== expected.sha) {
     throw new Error(`Upstream content mismatch: ${source.repository}/${sourcePath}`);
   }
@@ -60,7 +57,7 @@ async function save(target, data, source, sourcePath, tree) {
   };
 }
 
-const notices = ['# Third-party notices', '', 'Imported skill files retain their upstream contents. Original MIT notices are included in every exported skill and in the workflow support resources.', ''];
+const notices = ['# Third-party notices', '', 'The development-only Agent Plugins schema is Apache-2.0; see scripts/schemas/NOTICE.md and its accompanying license. It is not included in installed skills or the plugin directory.', '', 'Imported skill files retain their upstream contents. Original MIT notices are included in every exported skill and in the workflow support resources.', ''];
 
 for (const source of config.sources) {
   const selections = [...source.skills, ...(source.support ?? []).map((item) => item.selection ?? item.name)];
@@ -76,63 +73,41 @@ for (const source of config.sources) {
     if (result.status !== 0) throw new Error(`Skills installation failed for ${source.id}`);
   }
 
-  const lock = JSON.parse(await readFile(join(root, 'skills-lock.json'), 'utf8'));
+  const lock = await readJson('skills-lock.json');
   const treeResponse = JSON.parse(await download(`https://api.github.com/repos/${source.repository}/git/trees/${source.ref}?recursive=1`));
   if (treeResponse.truncated) throw new Error(`Truncated source tree for ${source.id}`);
-  const tree = new Map(treeResponse.tree.filter((entry) => entry.type === 'blob').map((entry) => [entry.path, entry]));
+  const blobsByPath = new Map(treeResponse.tree.filter((entry) => entry.type === 'blob').map((entry) => [entry.path, entry]));
   const license = await download(`https://raw.githubusercontent.com/${source.repository}/${source.ref}/${source.licensePath}`);
   const entries = [...source.skills.map((name) => ({ name, exported: true })), ...(source.support ?? [])];
 
   for (const item of entries) {
     const installed = join(root, '.agents/skills', item.name);
-    const lockEntry = Object.values(lock.skills).find((entry) => entry.source === source.repository
-      && entry.ref === source.ref && entry.skillPath.split('/').at(-2) === item.name);
+    const lockEntry = findPinnedSkill(lock, source, item.name);
     if (!lockEntry) throw new Error(`Missing pinned Skills CLI installation: ${source.id}/${item.name}`);
     const upstreamDirectory = dirname(lockEntry.skillPath);
     const outputDirectory = item.exported ? `skills/${item.name}` : `skills/workflow/references/upstream/${source.id}/skills/${item.name}`;
     const installedFiles = item.files ? item.files.map((file) => join(installed, file)) : await filesIn(installed);
-    const payloads = [];
+    outputDirectories.add(outputDirectory);
     for (const path of installedFiles) {
       const suffix = relative(installed, path).replaceAll('\\', '/');
-      const data = await readFile(path);
-      const upstreamPath = `${upstreamDirectory}/${suffix}`;
-      if (blobHash(data) !== tree.get(upstreamPath)?.sha) throw new Error(`Installed source mismatch: ${path}`);
-      payloads.push({ suffix, data, upstreamPath });
-    }
-    outputDirectories.add(outputDirectory);
-    for (const { suffix, data, upstreamPath } of payloads) {
+      const sourcePath = `${upstreamDirectory}/${suffix}`;
       const filename = !item.exported && suffix === 'SKILL.md' ? 'INSTRUCTIONS.md' : suffix;
-      await save(`${outputDirectory}/${filename}`, data, source, upstreamPath, tree);
+      stageVerifiedImport(`${outputDirectory}/${filename}`, await readFile(path), { source, sourcePath, blobsByPath });
     }
-    await save(`${outputDirectory}/UPSTREAM-LICENSE.txt`, license, source, source.licensePath, tree);
+    stageVerifiedImport(`${outputDirectory}/UPSTREAM-LICENSE.txt`, license, { source, sourcePath: source.licensePath, blobsByPath });
   }
 
   for (const resource of source.resources ?? []) {
     const data = await download(`https://raw.githubusercontent.com/${source.repository}/${source.ref}/${resource.source}`);
-    await save(resource.target, data, source, resource.source, tree);
+    stageVerifiedImport(resource.target, data, { source, sourcePath: resource.source, blobsByPath });
   }
   const supportLicense = `skills/workflow/references/upstream/${source.id}/LICENSE.txt`;
-  await save(supportLicense, license, source, source.licensePath, tree);
+  stageVerifiedImport(supportLicense, license, { source, sourcePath: source.licensePath, blobsByPath });
   notices.push(`## ${source.id}`, '', `Source: https://github.com/${source.repository}/tree/${source.ref}`, '', 'License: MIT. The full original notice follows.', '', license.toString('utf8').trim(), '');
 }
 
-// Remove retired imports only after every replacement has been validated.
-// Delete only ledger-owned files; preserve custom files in former export directories.
-for (const path of Object.keys(previousFiles)) {
-  if (staged.has(path)) continue;
-  const absolute = join(root, path);
-  await unlink(absolute);
-  let directory = dirname(absolute);
-  while (directory !== root && directory !== dirname(root)) {
-    try {
-      await rmdir(directory);
-    } catch (error) {
-      if (error.code === 'ENOTEMPTY' || error.code === 'ENOENT') break;
-      throw error;
-    }
-    directory = dirname(directory);
-  }
-}
+// Publication begins only after all replacements have passed their upstream checks.
+await retireImports(root, Object.keys(previousFiles), staged);
 for (const directory of outputDirectories) {
   await rm(join(root, directory), { recursive: true, force: true });
 }
