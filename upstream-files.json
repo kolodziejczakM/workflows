@@ -1,0 +1,824 @@
+{
+  "version": 1,
+  "files": {
+    "skills/blast-radius/SKILL.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/blast-radius/SKILL.md",
+      "gitBlob": "b296cce0d746260a53c16e3671cb05bacfe82daf",
+      "sha256": "2e10745b97f5862323dcda3b29ca60d56b5c3c98e37020085d26b48efbe0a436"
+    },
+    "skills/blast-radius/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/break-ui/CATALOG.md": {
+      "repository": "emilkowalski/skills",
+      "ref": "2d228630ba1446365f614a108cb8252f1feda202",
+      "path": "skills/break-ui/CATALOG.md",
+      "gitBlob": "46962bb89445b8526ea94994a79b49508573b5fd",
+      "sha256": "7358efcc6bb48e35187be1c064cf60022dcb18c72c18fab58b606dfc5f421f15"
+    },
+    "skills/break-ui/SKILL.md": {
+      "repository": "emilkowalski/skills",
+      "ref": "2d228630ba1446365f614a108cb8252f1feda202",
+      "path": "skills/break-ui/SKILL.md",
+      "gitBlob": "091a28d488662d2451131f1aaa60a6dcd2391932",
+      "sha256": "e7eec1d70ac56a04255e9c0dbe98084ea3d544cc04aaad34f32c95d6fa9dff5e"
+    },
+    "skills/break-ui/UPSTREAM-LICENSE.txt": {
+      "repository": "emilkowalski/skills",
+      "ref": "2d228630ba1446365f614a108cb8252f1feda202",
+      "path": "LICENSE",
+      "gitBlob": "57b46f1fd11dc62351ea548104a88aa3f659c11b",
+      "sha256": "4ff5bdb7887ec1435c9cab0e8d1a7caee704d894d65c2a008ccc68b1cc2f260b"
+    },
+    "skills/code-review/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/code-review/agents/openai.yaml",
+      "gitBlob": "9076774ba327f49068db9273feceda03bfe940fa",
+      "sha256": "8229ca854e11dc8e6aef2131ee03f31fb1561cf905fab9ccc325180cf3331352"
+    },
+    "skills/code-review/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/code-review/SKILL.md",
+      "gitBlob": "373a4f26e6cfa3617778397945bb069d9cb184bc",
+      "sha256": "09eb147f793e4647949edd32dbad278f0554dfb56e0d46b699cd4c2c55bf0357"
+    },
+    "skills/code-review/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/codebase-design/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/codebase-design/agents/openai.yaml",
+      "gitBlob": "3180715edb37f6e96bec42f92f00169faa8886ef",
+      "sha256": "edebc9e4fcfe102114012575eaa9600b9b5fd08c311664f389c36e7bc717740f"
+    },
+    "skills/codebase-design/DEEPENING.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/codebase-design/DEEPENING.md",
+      "gitBlob": "cd94075cfd754d147555c5d747a16431ed4c7dd8",
+      "sha256": "f3dd099ce99289bd213914d8ee3e2429b78309c3957ca4583f7659551b1d53c1"
+    },
+    "skills/codebase-design/DESIGN-IT-TWICE.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/codebase-design/DESIGN-IT-TWICE.md",
+      "gitBlob": "d0990138c35c800bd821289a73115e52680c1620",
+      "sha256": "52b52e75655a27aea59c6966b410bac82448968ad46ef1ebb9f07c274e3ae010"
+    },
+    "skills/codebase-design/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/codebase-design/SKILL.md",
+      "gitBlob": "3f63c8146dd2604b419c929e9876b90c30d410e9",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    "skills/codebase-design/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/create-verification-skill/references/feature-map-example/create-note.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/create-verification-skill/references/feature-map-example/create-note.md",
+      "gitBlob": "21357566b69223a503d6780a04fb90ce540eae22",
+      "sha256": "644a44c74f35d38c2feb7cd05a0121fdebbb623e8dc376c185b565a581d1ccf7"
+    },
+    "skills/create-verification-skill/references/feature-map-example/README.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/create-verification-skill/references/feature-map-example/README.md",
+      "gitBlob": "fb64570cfab3bbe672fe80925651933ebd57aa33",
+      "sha256": "cb7bd782cf89968a4ba3d58a5151db837430db92d19a6f52a906973b77b516ba"
+    },
+    "skills/create-verification-skill/references/feature-map-example/search.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/create-verification-skill/references/feature-map-example/search.md",
+      "gitBlob": "1f8e57d3aaf19cf27a9464d55fa72e46bcbc8b0f",
+      "sha256": "6e87b9e7f2791a7776ba1bb83f371cd285c306c67f19d245cc4dd6ca3015c823"
+    },
+    "skills/create-verification-skill/SKILL.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/create-verification-skill/SKILL.md",
+      "gitBlob": "140d033a001e8d27acd14b06004506c43053b199",
+      "sha256": "d353973547bf8ad8977eca645f4cd4feaed0d32f4b43d1448f906b0a76c4d694"
+    },
+    "skills/create-verification-skill/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/domain-modeling/ADR-FORMAT.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/domain-modeling/ADR-FORMAT.md",
+      "gitBlob": "d7e61f30a9fd8ca70d9ee68f019c2a9ebf2d13f7",
+      "sha256": "944c92aa790e8fbdc9199640b170979abb8a34ba8d0fe18c2a01a63bce140ca0"
+    },
+    "skills/domain-modeling/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/domain-modeling/agents/openai.yaml",
+      "gitBlob": "7f1522d2f11506ee205275ab7c282aa52366ecf6",
+      "sha256": "f6bf2aa996c6e6f53fdd0708e18a0d16a56aed8322cca59fedbe3c0d2c75f06b"
+    },
+    "skills/domain-modeling/GLOSSARY-FORMAT.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/domain-modeling/GLOSSARY-FORMAT.md",
+      "gitBlob": "9c0b4c7a2e8507c23cbb5e0baa66d81699321cc6",
+      "sha256": "21dcc40cdec8e151a829b98ab1517c1867bc444e3665134a98c6983411996801"
+    },
+    "skills/domain-modeling/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/domain-modeling/SKILL.md",
+      "gitBlob": "a4438c6879c517d1a08e2b5fbca049b632688dfe",
+      "sha256": "7b925d7b1e341a2eeae33ad68a8a8c0ab889a38ddd22a7598e4c240e5a7556a3"
+    },
+    "skills/domain-modeling/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/grill-me/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/productivity/grill-me/agents/openai.yaml",
+      "gitBlob": "4d6fb0c746c5d21364dce5d0cf8c51eab9712e7b",
+      "sha256": "c061e39c3e0f9d865fb1b97556d485704af2a8a58f4b8221a8917a5c2074a32b"
+    },
+    "skills/grill-me/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/productivity/grill-me/SKILL.md",
+      "gitBlob": "3947ff9c4ad980d14fc07fccbf659d47c114e81d",
+      "sha256": "caaf8b8de1684f96e26b28f3c29189db5c89cce4b73e1c93d86164f66ef88637"
+    },
+    "skills/grill-me/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/grill-with-docs/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/grill-with-docs/agents/openai.yaml",
+      "gitBlob": "5dbe2780a51be3e9b118bd7758a73e54a9384e11",
+      "sha256": "94cd0ab161fb468a836349f5ed482ba58ce8e709a05c57ce533d739dbd35cca9"
+    },
+    "skills/grill-with-docs/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/grill-with-docs/SKILL.md",
+      "gitBlob": "62b9efb6f991d1b229adee7506962f13ced0c499",
+      "sha256": "7de372c13488f1ee96cc11cd8907b56b6809cc93eef776eeddd37de6b6cbe3fe"
+    },
+    "skills/grill-with-docs/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/grilling/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/productivity/grilling/agents/openai.yaml",
+      "gitBlob": "ddbdb96139c0c1dfe6bca698f39d0465674b8a39",
+      "sha256": "1411d7df7d99b7e621a1ff8283c8133cc2464be63d064e52d8ce169c6800ee9b"
+    },
+    "skills/grilling/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/productivity/grilling/SKILL.md",
+      "gitBlob": "df69d9936880cd3314c28858c6c52f48db23b856",
+      "sha256": "befdff1e27a1dfe2a294d5871169ac1afe16d983911daa4f32627514a48c1e15"
+    },
+    "skills/grilling/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/implement-spec/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/implement-spec/agents/openai.yaml",
+      "gitBlob": "f5e91af21e38eb1a167ea5aa93dfc7da3c4637b4",
+      "sha256": "fd41efb42c60c96320d6531be7e4bf15cbf5518cd652d57dff27ccffa46988e9"
+    },
+    "skills/implement-spec/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/implement-spec/SKILL.md",
+      "gitBlob": "183923797ab58f1b3ef09e03bc1f1f203c309f37",
+      "sha256": "7a22dd2e60b8fcece478ced9d2533582adf3520d695acd3ab715341535c9e56d"
+    },
+    "skills/implement-spec/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/implement/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/implement/agents/openai.yaml",
+      "gitBlob": "f8794dc153b409052a9167baf10858cf01b36175",
+      "sha256": "8970a8596ade0c28ab427f41a4ea242d6bdf6186c59ebf55e1238dbecaab79dc"
+    },
+    "skills/implement/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/implement/SKILL.md",
+      "gitBlob": "bd49e472984c7b99aac40286fdae749bb955a842",
+      "sha256": "483bdc4ccf4ac31d86ac7beeaa0d0db80313e71e120bb8c59b3196ae5decd53d"
+    },
+    "skills/implement/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/interrogate/references/code-quality-review.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/interrogate/references/code-quality-review.md",
+      "gitBlob": "16581250d81044c7e80fe234c4970a3f7b7fc98a",
+      "sha256": "79162fda183eafd40d51661fbb5e151c7ba250f89e506ba17f5bd135dcbd50a8"
+    },
+    "skills/interrogate/references/lead-judgment.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/interrogate/references/lead-judgment.md",
+      "gitBlob": "3b41346c9c3f5c35453d34f1c77374b7e9346aa9",
+      "sha256": "355f5195a76bc75a655125292369f2a8231a2b61fabe5188d8f1386060922b87"
+    },
+    "skills/interrogate/references/reviewer-prompt.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/interrogate/references/reviewer-prompt.md",
+      "gitBlob": "ef7bff3d77c35a0af2a9947187ccee15465657f4",
+      "sha256": "f6005cc2b535006fca97a96c5bfda49df57312eedf1ffd8d1aaaf3eb33817c25"
+    },
+    "skills/interrogate/references/rubric.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/interrogate/references/rubric.md",
+      "gitBlob": "8dab195ab840554bfe5e74e9b5ca0d9edbe9b496",
+      "sha256": "0f9c6bdb0b96e26dbde5f6407f417e0c02f54080e7a1268d8994f3c3ec6c5ac0"
+    },
+    "skills/interrogate/SKILL.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/interrogate/SKILL.md",
+      "gitBlob": "94946d22d8bf896bfcc2c54d363df5af3d17b4ca",
+      "sha256": "a16dfe179005abc22a4651b82f25b0c8ab953284276efe4e6dc341958fb63647"
+    },
+    "skills/interrogate/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/maintain-verification-skill/SKILL.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/maintain-verification-skill/SKILL.md",
+      "gitBlob": "a2680b91fead45a0b4963d8c367a854956bea59d",
+      "sha256": "515c0eaa054b3f6be1b1fb06f2c2f173c80fddb58bbcac57576f89c479bc68e8"
+    },
+    "skills/maintain-verification-skill/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/pr/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/pr/agents/openai.yaml",
+      "gitBlob": "48286f48f53b937cc19c0e39899b5f956271a98d",
+      "sha256": "2295b586624db4ef546f3fd4695492f039d941a46d8a1593a702ce3ca511b8ad"
+    },
+    "skills/pr/CREDITS.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/pr/CREDITS.md",
+      "gitBlob": "5314bda2fa6005e264c9b5c1de7c425e719dc91f",
+      "sha256": "a7a087127665d7298a72280ef6e19c41ad8404523712a788c8dc3ab414bc2497"
+    },
+    "skills/pr/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/pr/SKILL.md",
+      "gitBlob": "84dd4fb2f068e9f6282690235d20dd505b418119",
+      "sha256": "ab63f1cf78647389edcd386c9427c5dfca27ed2836930c24773ffee834c19bcd"
+    },
+    "skills/pr/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/retro/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/retro/agents/openai.yaml",
+      "gitBlob": "a2f0bac3f9cebf29beee2e79960cb876e0adc65d",
+      "sha256": "cb6fb9d7e6b4be5975f41f6def1dd00a1255bad5d9b02696b124c924a8b8745c"
+    },
+    "skills/retro/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/retro/SKILL.md",
+      "gitBlob": "12149acf2dd23b4514dec57b04a6293eaa1352fa",
+      "sha256": "33fbc28568e3146f20fd908b12998bc0ab30aa4f4c87288199a40793efa94696"
+    },
+    "skills/retro/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/review-animations/SKILL.md": {
+      "repository": "emilkowalski/skills",
+      "ref": "2d228630ba1446365f614a108cb8252f1feda202",
+      "path": "skills/review-animations/SKILL.md",
+      "gitBlob": "577a64397267ce20960de2202950594d5bd6f9b6",
+      "sha256": "6ff590d29e436766135aa3d137be1fac2a867165c7257fc315b189361f1873af"
+    },
+    "skills/review-animations/STANDARDS.md": {
+      "repository": "emilkowalski/skills",
+      "ref": "2d228630ba1446365f614a108cb8252f1feda202",
+      "path": "skills/review-animations/STANDARDS.md",
+      "gitBlob": "863ea12ea94c1f7a47b5f7e1019e976aa82bd4cd",
+      "sha256": "e7d3605034acda54ca13e43aec9e64d65b53de20f75b11b8d694e373012fbe07"
+    },
+    "skills/review-animations/UPSTREAM-LICENSE.txt": {
+      "repository": "emilkowalski/skills",
+      "ref": "2d228630ba1446365f614a108cb8252f1feda202",
+      "path": "LICENSE",
+      "gitBlob": "57b46f1fd11dc62351ea548104a88aa3f659c11b",
+      "sha256": "4ff5bdb7887ec1435c9cab0e8d1a7caee704d894d65c2a008ccc68b1cc2f260b"
+    },
+    "skills/setup-matt-pocock-skills/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/setup-matt-pocock-skills/agents/openai.yaml",
+      "gitBlob": "65a0da8128c98051183235e490767a8065310868",
+      "sha256": "9527de0110541c45712319025155aeab8dc7d77c6ed6e5e83271bab1851ab939"
+    },
+    "skills/setup-matt-pocock-skills/domain.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/setup-matt-pocock-skills/domain.md",
+      "gitBlob": "4032de016c1e91119d33d477633e2b8f265f4195",
+      "sha256": "593a7042218689f1d24df89df14eaf0a20e19e0d0a7d479a01947ac78f0784b9"
+    },
+    "skills/setup-matt-pocock-skills/issue-tracker-github.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-github.md",
+      "gitBlob": "a63510f74038300d8da354553f9d31d1bd954d94",
+      "sha256": "f0653fe106dd8ee7b33be27bd7fe3104b40555896cb45f61997aed20467020c3"
+    },
+    "skills/setup-matt-pocock-skills/issue-tracker-gitlab.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-gitlab.md",
+      "gitBlob": "81499dca459e8097d560b641f8ba7c2e1c7c9da4",
+      "sha256": "591a9e7057382aaccdfbed3f7ea3f2ad07e0cd29f012d18b82ee4e485fd81e24"
+    },
+    "skills/setup-matt-pocock-skills/issue-tracker-local.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/setup-matt-pocock-skills/issue-tracker-local.md",
+      "gitBlob": "0209a19af92c9c485cf3acc3d9e253171517ea17",
+      "sha256": "7dcda20a2eb4bdc89b95d1143423c0691309921cadae3132e6424f371030506e"
+    },
+    "skills/setup-matt-pocock-skills/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/setup-matt-pocock-skills/SKILL.md",
+      "gitBlob": "293c25b75590119794af03b037ba4288054a32b3",
+      "sha256": "f148858ffb7f63c03c06fca06e6fdb1d91a35c6b293244b8fdfacd5f4cc028c4"
+    },
+    "skills/setup-matt-pocock-skills/triage-labels.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/setup-matt-pocock-skills/triage-labels.md",
+      "gitBlob": "5276464244857a3cc29890ff4a978a197b21f3fc",
+      "sha256": "ae512af838c78b8750471c42cd2b20fa32319553e61d84c9a23d171b40ce14aa"
+    },
+    "skills/setup-matt-pocock-skills/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/tdd/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/tdd/agents/openai.yaml",
+      "gitBlob": "651b838a7663e027b1b8884491e867f26bb9a021",
+      "sha256": "ea6f01cf1b8c06a4b0f5b649d74b1b8ce8685e72af1b38d70d877693e092af0b"
+    },
+    "skills/tdd/mocking.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/tdd/mocking.md",
+      "gitBlob": "71cbfee674d93244ce81d1830b930ca9a69200bd",
+      "sha256": "3ceb807fdf4a47d6a93d4d9a891e5ba6d362a6247bd08adc451feebfc17361ef"
+    },
+    "skills/tdd/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/tdd/SKILL.md",
+      "gitBlob": "01eadaa34e7c9a63a67d6dc3cce1cc81b0e49985",
+      "sha256": "5505d25bbaa8fc14a79e4d20163936958992a2995b7f1dd1d6197edc9ed722e0"
+    },
+    "skills/tdd/tests.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/tdd/tests.md",
+      "gitBlob": "7ab86479f925a1f9e8ba680af33cb3b12e015381",
+      "sha256": "859f9e592c188fda4fc7277dd180e4ce9c7a2e13f6efe1f6f29eccc9d28c106a"
+    },
+    "skills/tdd/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/to-spec/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/to-spec/agents/openai.yaml",
+      "gitBlob": "549e6f76f020a1b9ba65f52ccda336566ee6222a",
+      "sha256": "1c5b4d1e3d8e52287ef19cc2742fdbbfae1914ac75d33af3e4c8174f08cc55bb"
+    },
+    "skills/to-spec/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/to-spec/SKILL.md",
+      "gitBlob": "3f52599ae2a4347aee5a07432c2707518e691a7f",
+      "sha256": "43ad9cf318e5e7d3d1fa360253a37021796dc87a0c2e595ad262661a10f85088"
+    },
+    "skills/to-spec/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/to-tickets/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/to-tickets/agents/openai.yaml",
+      "gitBlob": "24605a5db64e4fc750b999aa94aea126bee814ee",
+      "sha256": "21bc6215fffcd7614e9f772bb1760e87cc5fc7dcc707e7d282bc9414267a6090"
+    },
+    "skills/to-tickets/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/engineering/to-tickets/SKILL.md",
+      "gitBlob": "9b77a01db9460c99c22d03c910c349f890f12c0e",
+      "sha256": "56ec23c5b2782785d4e65bff9e315b6d3aeb4ef977c174a219e99489fada1995"
+    },
+    "skills/to-tickets/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/workflow/references/upstream/emilkowalski/LICENSE.txt": {
+      "repository": "emilkowalski/skills",
+      "ref": "2d228630ba1446365f614a108cb8252f1feda202",
+      "path": "LICENSE",
+      "gitBlob": "57b46f1fd11dc62351ea548104a88aa3f659c11b",
+      "sha256": "4ff5bdb7887ec1435c9cab0e8d1a7caee704d894d65c2a008ccc68b1cc2f260b"
+    },
+    "skills/workflow/references/upstream/mattpocock/LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    },
+    "skills/workflow/references/upstream/pstack/claude-code.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/docs/harness/claude-code.md",
+      "gitBlob": "012a54f216e5f7ee9000892bf5e47a1526719dcb",
+      "sha256": "cbf1dc0dfb4a4e3c254eb5362bfb1c9db04517a4b4eec1b3315973f5bbd8325a"
+    },
+    "skills/workflow/references/upstream/pstack/LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/workflow/references/upstream/pstack/skills/arena/INSTRUCTIONS.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/arena/SKILL.md",
+      "gitBlob": "b198b9e425c6b3e6ff01ca789b97ca5b4abb7ce2",
+      "sha256": "ed72f6c132b1ce3974d949581d0adc5dade424fe20793ac3b4c4fae22ecb9354"
+    },
+    "skills/workflow/references/upstream/pstack/skills/arena/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/workflow/references/upstream/pstack/skills/poteto-mode/INSTRUCTIONS.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/poteto-mode/SKILL.md",
+      "gitBlob": "9295b7e4fb87eb95d3c887d79e63ec748ce20e4d",
+      "sha256": "c5e6b605f46e5d9fbab31afa7a99d3d50680f2180d1fdfae3a924901bc52d99a"
+    },
+    "skills/workflow/references/upstream/pstack/skills/poteto-mode/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/workflow/references/upstream/pstack/skills/principle-encode-lessons-in-structure/INSTRUCTIONS.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/principle-encode-lessons-in-structure/SKILL.md",
+      "gitBlob": "4a96f77fe70e36cb030f9c5efa142f66877bf58a",
+      "sha256": "228963799189f481827d6f28065f278bc2008ffa37030b1234cbd5814d36b9e9"
+    },
+    "skills/workflow/references/upstream/pstack/skills/principle-encode-lessons-in-structure/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/workflow/references/upstream/pstack/skills/principle-laziness-protocol/INSTRUCTIONS.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/principle-laziness-protocol/SKILL.md",
+      "gitBlob": "016c3c7c8dfffd995c1a02135a62248e6625879b",
+      "sha256": "1be6e7a435f26a75a76eb848b9c3d611b9977d0f5822361753244da25ca3ca45"
+    },
+    "skills/workflow/references/upstream/pstack/skills/principle-laziness-protocol/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/workflow/references/upstream/pstack/skills/principle-prove-it-works/INSTRUCTIONS.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/principle-prove-it-works/SKILL.md",
+      "gitBlob": "5dc14a3b06f9d579e5c17cd8a7242f432ddb3125",
+      "sha256": "ec79a15025bac8d33d62011c54f3b612733fd2a024e623b531b3637aa75070e2"
+    },
+    "skills/workflow/references/upstream/pstack/skills/principle-prove-it-works/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/workflow/references/upstream/pstack/skills/principle-redesign-from-first-principles/INSTRUCTIONS.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/principle-redesign-from-first-principles/SKILL.md",
+      "gitBlob": "5ca5246cbb0fa08884ce17b0d22c117ae1ad67b8",
+      "sha256": "170e0a658783e43fee8ec5a8c2422a4abb8f69cef621dd1819a95910b8207034"
+    },
+    "skills/workflow/references/upstream/pstack/skills/principle-redesign-from-first-principles/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/workflow/references/upstream/pstack/skills/principle-separate-before-serializing-shared-state/INSTRUCTIONS.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/principle-separate-before-serializing-shared-state/SKILL.md",
+      "gitBlob": "ff93b4a2032c08e2232992a9a24f2891ee14e58f",
+      "sha256": "05294b40448e927c5da1c7b6f5c6b9fed3744637e3833d2d948b9154a9dd00bb"
+    },
+    "skills/workflow/references/upstream/pstack/skills/principle-separate-before-serializing-shared-state/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/workflow/references/upstream/pstack/skills/show-me-your-work/INSTRUCTIONS.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/show-me-your-work/SKILL.md",
+      "gitBlob": "ada1bba1e51356de0e0d4da1d13ba5a56ba9c7cb",
+      "sha256": "920a8217cbb62f92a2222fb81fc9eab17ecd554a0277e444a95a927195139bd1"
+    },
+    "skills/workflow/references/upstream/pstack/skills/show-me-your-work/references/decision-log-template.tsv": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/show-me-your-work/references/decision-log-template.tsv",
+      "gitBlob": "db220376ecb8c582a6a4f6575a8f26469603a38d",
+      "sha256": "6779378006a2f5225e8c06deb84f1d913fb532041ebbb6e50d94600bfe3f4b76"
+    },
+    "skills/workflow/references/upstream/pstack/skills/show-me-your-work/scripts/log.sh": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/show-me-your-work/scripts/log.sh",
+      "gitBlob": "052e53b7e1090579eaec1d3d59f7a1cd2f2e452a",
+      "sha256": "a65a4bc5fb7cdeadbdb7b7ff1ca4682f4d9c42420942b2977cd17b46c4ac338e"
+    },
+    "skills/workflow/references/upstream/pstack/skills/show-me-your-work/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/workflow/references/upstream/pstack/skills/unslop/INSTRUCTIONS.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/unslop/SKILL.md",
+      "gitBlob": "97f5b6412148fa5b2a2fe478836fe8923ffa5cbb",
+      "sha256": "ccab208e315ce05e2fab8eeee2f7879f1289b5c6844840b2d307adf31c79144f"
+    },
+    "skills/workflow/references/upstream/pstack/skills/unslop/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/INSTRUCTIONS.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/SKILL.md",
+      "gitBlob": "b5fe93f8b78f58b06e0bf245a6b5b8faae4300e8",
+      "sha256": "144d42e7712723d763e607bc0a969e5f1cdf83ec7228519d87677cc534571bed"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/references/epistemics.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/references/epistemics.md",
+      "gitBlob": "b18abf41dfa245ee55e94f1b3a80c0b750eb10cf",
+      "sha256": "d54a2361b2d5973bc3fe2edf62f446d87935974d4b40d47f23b9529f956ca758"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/references/investigator-prompt.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/references/investigator-prompt.md",
+      "gitBlob": "e1c2bbf52197ff600ba6e4552439e630687b7ae2",
+      "sha256": "c44afba186f899094f3694e6c9d6de5d14ff7c4ce28b787a9f50fc789c9a7fc3"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/references/source-playbook.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/references/source-playbook.md",
+      "gitBlob": "aa3d877cd539763ff05e266ae0a02dd811441e2b",
+      "sha256": "9ae9dcb9d09111c9facc68510331c5aba4aed9b1b057314ff1fc0e166ad3993a"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/references/sources/code-archaeology.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/references/sources/code-archaeology.md",
+      "gitBlob": "e3555f809da0a5654ceefe7d2c20080397c03506",
+      "sha256": "a4a3970e9db448054aed676f3f7feeee667b4b69f0bd57c8fd72b751be687cc7"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/references/sources/databricks.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/references/sources/databricks.md",
+      "gitBlob": "2770763ff5d0d1ad004abcc9a0138c9537ad1978",
+      "sha256": "236ede7aab6454662a992db088a5393537a5233a4c26719c93188f9e174488f6"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/references/sources/datadog.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/references/sources/datadog.md",
+      "gitBlob": "536466ddd8ae6543836abb84bdf1efd8e43089ba",
+      "sha256": "b139faac5dc11b8f26c8255dce6033c1a6ac143b038d3dd103f2034c5dbec9cd"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/references/sources/incident-postmortem.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/references/sources/incident-postmortem.md",
+      "gitBlob": "e7397e7ef374bee3b7f0018ac8e5ddd4322bab12",
+      "sha256": "bf2661f1a81c37700884a45b77d6289be0c802b065febced31990e6564510839"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/references/sources/linear.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/references/sources/linear.md",
+      "gitBlob": "899c643c078f322afe6ae0ef78a007f8ffd356c1",
+      "sha256": "01304e7f1badfcfb78babbb0edcadeb3cc8dd3f713793420cdff24ba190f907c"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/references/sources/notion.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/references/sources/notion.md",
+      "gitBlob": "d16230a4105fd1dacf870da0950a38faeb9381e6",
+      "sha256": "3bcfa695c49dfad4ac036d5d7181c12585f55ac04f1936198d16ab75a2788997"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/references/sources/sentry.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/references/sources/sentry.md",
+      "gitBlob": "8200fd9f3abbb7fca76d0079663502b33524bd09",
+      "sha256": "2d4f83048eac1df530b399e2aed75dd7c9c18577b7665420aaeb96d0ceb0b702"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/references/sources/slack.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/references/sources/slack.md",
+      "gitBlob": "cadd5618a349adc5eb1dce6fddde38e7221e00fd",
+      "sha256": "3bc6309f5c7b26ace3b919dbd7f7b048861dd2020f910fe24f656cc74b3b661c"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/references/synthesizer-prompt.md": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/skills/why/references/synthesizer-prompt.md",
+      "gitBlob": "287a350c925c28b44f0e0dc687bb09a843e11100",
+      "sha256": "11c62671aa7b7a6e3d36929ffe2b59bf95e6ca664eee4d93e6ee527dd3390ddb"
+    },
+    "skills/workflow/references/upstream/pstack/skills/why/UPSTREAM-LICENSE.txt": {
+      "repository": "cursor/plugins",
+      "ref": "101b274dd991f694e1f7024be2157e5f3adf07de",
+      "path": "pstack/LICENSE",
+      "gitBlob": "6b5400237fdf6545be0b8fae370d6f2fcff8fb25",
+      "sha256": "bc957ca6bee02792566a1a028d105e02e247c6e77cf057061674273da77b200e"
+    },
+    "skills/writing-for-agents/agents/openai.yaml": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/productivity/writing-for-agents/agents/openai.yaml",
+      "gitBlob": "079c933b75743dec18b5d0c01006def20b6aad26",
+      "sha256": "eacb24b2a618cfb81dacb0416f4fdd75ddf3a8060f8ddb99aae1b1e301907e4b"
+    },
+    "skills/writing-for-agents/SKILL-MECHANICS.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/productivity/writing-for-agents/SKILL-MECHANICS.md",
+      "gitBlob": "9cdbdb22aadc438755392216e75ad9a14cc9832e",
+      "sha256": "c768e6307c7c10728c401c213f2c4ba71c542127eeb7ad2956aabd15a0fa0059"
+    },
+    "skills/writing-for-agents/SKILL.md": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "skills/productivity/writing-for-agents/SKILL.md",
+      "gitBlob": "a37608daf6e835e767deecfb498facecaaba82ba",
+      "sha256": "551adca942227b44192edba88acd4e8db911f0121ce58ad16944ccf6a896a74a"
+    },
+    "skills/writing-for-agents/UPSTREAM-LICENSE.txt": {
+      "repository": "mattpocock/skills",
+      "ref": "49dd158d1076134a641b33efb035946536778336",
+      "path": "LICENSE",
+      "gitBlob": "f1dd2c09108dde1a5f56097cee8461b3ea834499",
+      "sha256": "0e7ac423bf2c6e223b7c5b156f8cf72da49d748e56a1641402c31f22ad07dbb5"
+    }
+  }
+}
