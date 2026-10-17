@@ -22,6 +22,10 @@ For generated client verification skills, map pstack's `.cursor/skills/verify-<a
 
 Verification commands execute in the client and use client-specific ports, state, and artifacts. Preserve proof through cleanup. Do not write runtime evidence inside an installed skill or plugin cache. `maintain-verification-skill` may edit the generated client verifier but not the imported generator or product code.
 
+## UI stress-test fixtures
+
+`break-ui` writes dev-only fixtures and a toggle even when it only reports findings. State these verification writes before running it. Prefer an existing harness or an isolated client checkout for the fixtures. A read-only request does not authorize changes to the client's product checkout; if the check needs writes and isolation is unavailable, report it blocked. Preserve evidence before removing task-owned temporary fixtures, and never overwrite or restore pre-existing dirty work. If a build retains new fixtures, include them in the final diff review and refresh proof after their integration.
+
 ## Review before commit
 
 Matt's `implement` requests `code-review` before its final commit, while that reviewer uses a committed `base...HEAD` range. When a nested review reaches this situation, preserve the client's unrelated changes and ensure the task result has a task-scoped checkpoint commit before invoking the unchanged reviewer, provided committing this work is already authorized by the chosen implementation flow. Give it the frozen base and spec explicitly. Otherwise report why a committed review cannot run; do not pretend it covered working-tree or untracked changes. Verify mode itself does not grant permission to commit a user's existing work.

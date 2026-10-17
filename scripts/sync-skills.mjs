@@ -1,6 +1,6 @@
 import { createHash } from 'node:crypto';
 import { spawnSync } from 'node:child_process';
-import { chmod, lstat, mkdir, readFile, readdir, readlink, rm, symlink, writeFile } from 'node:fs/promises';
+import { chmod, lstat, mkdir, readFile, readdir, readlink, rm, rmdir, symlink, unlink, writeFile } from 'node:fs/promises';
 import { dirname, join, relative } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -12,10 +12,11 @@ const sha256 = (data) => createHash('sha256').update(data).digest('hex');
 const ledger = { version: 1, files: {} };
 const staged = new Map();
 const outputDirectories = new Set();
+let previousFiles = {};
 
 try {
-  const previous = JSON.parse(await readFile(ledgerPath, 'utf8'));
-  for (const [path, record] of Object.entries(previous.files)) {
+  previousFiles = JSON.parse(await readFile(ledgerPath, 'utf8')).files;
+  for (const [path, record] of Object.entries(previousFiles)) {
     const current = await readFile(join(root, path));
     if (sha256(current) !== record.sha256) {
       throw new Error(`Imported file changed: ${path}. Restore it before syncing.`);
@@ -115,6 +116,23 @@ for (const source of config.sources) {
   notices.push(`## ${source.id}`, '', `Source: https://github.com/${source.repository}/tree/${source.ref}`, '', 'License: MIT. The full original notice follows.', '', license.toString('utf8').trim(), '');
 }
 
+// Remove retired imports only after every replacement has been validated.
+// Delete only ledger-owned files; preserve custom files in former export directories.
+for (const path of Object.keys(previousFiles)) {
+  if (staged.has(path)) continue;
+  const absolute = join(root, path);
+  await unlink(absolute);
+  let directory = dirname(absolute);
+  while (directory !== root && directory !== dirname(root)) {
+    try {
+      await rmdir(directory);
+    } catch (error) {
+      if (error.code === 'ENOTEMPTY' || error.code === 'ENOENT') break;
+      throw error;
+    }
+    directory = dirname(directory);
+  }
+}
 for (const directory of outputDirectories) {
   await rm(join(root, directory), { recursive: true, force: true });
 }
@@ -126,7 +144,7 @@ for (const [target, { data, mode }] of staged) {
 }
 ledger.files = Object.fromEntries(Object.entries(ledger.files).sort(([left], [right]) => left.localeCompare(right)));
 await writeFile(ledgerPath, `${JSON.stringify(ledger, null, 2)}\n`);
-await writeFile(join(root, 'THIRD_PARTY_NOTICES.md'), `${notices.join('\n')}\n`);
+await writeFile(join(root, 'THIRD_PARTY_NOTICES.md'), `${notices.join('\n').trimEnd()}\n`);
 await writeFile(join(root, 'skills/workflow/LICENSE.txt'), await readFile(join(root, 'LICENSE')));
 for (const [path, target] of [
   ['.agents/skills/workflow', '../../skills/workflow'],

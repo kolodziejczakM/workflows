@@ -4,13 +4,13 @@ Matt Pocock workflows followed by proof in the running application, with relevan
 
 ## Install in your application repository
 
-After this bundle is pushed to GitHub, run from the **client application repository**:
+Once this bundle is merged into the default branch, run from the **client application repository**:
 
 ```bash
 npx --yes skills@1.7.2 add kolodziejczakM/workflows --skill '*' --agent codex cursor claude-code --yes
 ```
 
-Installs all required skills into `.agents/skills/`, with Claude Code links. No clone needed. Keep only your runtimes in the command, then start a new agent session.
+Installs all required skills into `.agents/skills/`, with Claude Code links. No manual clone needed. Private repositories require GitHub access through your configured Git credentials. Keep only your runtimes in the command, then start a new agent session.
 
 ## Typical workflows
 
