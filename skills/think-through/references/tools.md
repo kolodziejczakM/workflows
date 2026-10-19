@@ -6,7 +6,7 @@ These eight cards retain the source PDF's numbering. Use the selected card; they
 
 **Use:** separate a problem into parts, or estimate a quantity from simpler terms. PDF p. 4.
 
-**Do:** define the quantity and units; split it into non-overlapping contributors; record dependencies. For a numerical estimate, combine terms with an explicit formula, use defensible low/high scenarios, vary influential assumptions separately, and cross-check against comparable completed cases. If inputs are unknown, give the formula and the measurement that would improve it rather than inventing values.
+**Do:** for any problem, separate parts or subproblems and record their dependencies. If estimating a number, define the quantity and units, combine simpler estimates with an explicit formula, calculate low/high scenarios, vary the main assumptions separately, and cross-check against comparable cases. Uncertain inputs can use defensible provisional ranges: label them as estimates or assumptions, explain their basis, and identify the observation or sample that would improve the influential unknown. If no defensible estimate is possible, leave that input unresolved rather than present a fabricated fact.
 
 **Output:** a decomposition, or a scenario range with assumptions and its most influential unknown.
 
@@ -34,7 +34,7 @@ These eight cards retain the source PDF's numbering. Use the selected card; they
 
 ## 4. Structural analogy
 
-**Use:** there is no useful starting model, but a familiar domain may share relevant relationships. PDF p. 5.
+**Use:** transfer relationships from a familiar domain to a new one; this is especially helpful when there is no useful starting model. PDF p. 5.
 
 **Do:** map elements and relationships between the familiar and target situations. Derive a specific hypothesis or prediction from that mapping. Identify differences that could break it and a way to check those differences.
 
@@ -56,7 +56,7 @@ These eight cards retain the source PDF's numbering. Use the selected card; they
 
 **Use:** challenge a concrete plan before committing to it. Inversion can also expose what would prevent success when the plan is still forming. PDF p. 5.
 
-**Do:** define success and a horizon, then imagine the plan failed by that point. Identify plausible causes. In a team exercise, suggest independent contributions before group discussion; one agent inventing several voices is not independent input. Prioritize risks by plausibility, impact, and ability to intervene. Change the plan through safeguards, proposed owners, warning signals, and fallbacks. Ask who can own an action when ownership is unknown.
+**Do:** for inversion, reverse the question from achieving success to what would prevent it. For a premortem, define success and a horizon, then imagine the concrete plan failed by that point. Identify plausible causes. In a team exercise, suggest independent contributions before group discussion; one agent inventing several voices is not independent input. Prioritize risks by plausibility, impact, and ability to intervene. Change the plan through safeguards, proposed owners, warning signals, and fallbacks. Ask who can own an action when ownership is unknown.
 
 **Output:** a modified plan with prioritized risks and safeguards.
 
@@ -66,7 +66,7 @@ These eight cards retain the source PDF's numbering. Use the selected card; they
 
 **Use:** new evidence should change an existing probability assessment. PDF p. 6.
 
-**Do:** identify the hypothesis, prior assessment, evidence, and how likely that evidence would be both if the hypothesis were true and if it were false. Equal likelihoods leave the assessment unchanged. When numerical inputs are justified, use odds or natural frequencies; for a binary hypothesis, P(H|E) = P(E|H)P(H) / [P(E|H)P(H) + P(E|not H)P(not H)]. Use qualitative updating when the inputs cannot support numbers, and expose sensitivity to uncertain assumptions.
+**Do:** identify the hypothesis, prior assessment, and new evidence. Ground and justify the prior, using frequencies in comparable cases among other relevant information; label a stipulated illustrative prior as an assumption. Ask how likely the evidence would be both if the hypothesis were true and if it were false. Equal likelihoods leave the assessment unchanged. Reason qualitatively when the inputs cannot support numbers. Natural frequencies, as in the PDF example, or an equivalent formula can help with a justified numerical update; no representation is mandatory. For a binary hypothesis, the equivalent calculation is P(H|E) = P(E|H)P(H) / [P(E|H)P(H) + P(E|not H)P(not H)].
 
 **Output:** a revised assessment, the assumptions behind it, and what further evidence could change it.
 
@@ -76,7 +76,7 @@ These eight cards retain the source PDF's numbering. Use the selected card; they
 
 **Use:** choose between options or design an approach around a goal. PDF p. 6.
 
-**Do:** state the objective and separate real constraints from habits. Select two to four decision criteria and clarify their relative importance when it matters. Compare feasible alternatives, including a smaller change and doing nothing where applicable. Vary decisive assumptions or weights to see whether the choice changes. Identify the unknown worth checking before commitment.
+**Do:** state the objective and separate real constraints from habits. Select two to four decision criteria and establish their importance; qualitative priorities are sufficient. Compare alternatives, including a smaller change and no change. If an option violates a hard constraint, say so. Once a concrete plan emerges, check possible failure with tool 6 before treating the decision/design as complete. Vary decisive assumptions or weights to see whether the choice changes. Identify the unknown worth checking before commitment.
 
 **Output:** a choice or conditional recommendation, its rationale, the best forgone alternative, and a reconsideration condition.
 

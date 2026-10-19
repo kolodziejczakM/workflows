@@ -1,8 +1,8 @@
 # Source and adaptation
 
-This skill is an English adaptation of the user's six-page thinking-tools framework, supplied as `1-Framework-myslenia.pdf`, dated 19 October 2026. The PDF remains the source; it is not required at runtime and has not been added to the distributed bundle.
+This skill is an English adaptation of the user's six-page thinking-tools framework, supplied as `1-Framework-myslenia.pdf`, dated 19 October 2026. The PDF remains the authority for the framework's meaning. An unchanged copy is archived in the source repository for maintainers; it is not included in installed skills or the plugin payload and is not needed during normal use.
 
-Source SHA-256: `afb778072906d3f16cb9cc3d06cc61ef05d199bd026dbae398f81d5cfd207431`.
+Maintainer-only archive: `docs/sources/thinking-framework-2026-10-19.pdf` in the source repository. Its original filename, date, page count, and SHA-256 are recorded in `docs/sources/thinking-framework.json`. These are source-repository locations, not paths to resolve inside a client installation. Consult the archive only for a requested source audit, translation maintenance, or a suspected mismatch; use the English instructions during ordinary operation.
 
 | PDF pages | Adaptation |
 | --- | --- |
@@ -12,7 +12,7 @@ Source SHA-256: `afb778072906d3f16cb9cc3d06cc61ef05d199bd026dbae398f81d5cfd20743
 | 5 | Tools 4–6: structural analogy, systems thinking, inversion/premortem |
 | 6 | Tools 7–8: Bayesian updating, criteria/opportunity costs; evidence limits and further reading |
 
-The conversational routing, concise comparison of rejected alternatives, and chat-first interaction are integration choices requested by the user. The PDF describes an authored synthesis of methods, not an independently tested framework. Its cited sources have different scopes and do not establish that this complete workflow has been validated. Behavioral examples used to check this skill establish only the behavior observed in those examples.
+The conversational routing, concise comparison of rejected alternatives, English output, and chat-first interaction are integration choices requested by the user. They change the interface, not the methods or completion requirements. Examples can be condensed; mathematical representations can be offered as equivalent aids, not additional required steps. When maintaining the skill, compare all routes, instructions, outputs, and caveats with the PDF; correct the English instructions if their meaning diverges. The PDF describes an authored synthesis of methods, not an independently tested framework. Its cited sources have different scopes and do not establish that this complete workflow has been validated. Behavioral examples used to check this skill establish only the behavior observed in those examples.
 
 The original PDF's further-reading links are preserved below for attribution and optional study. They have not been independently audited as part of this adaptation:
 

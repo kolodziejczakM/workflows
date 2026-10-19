@@ -6,7 +6,7 @@ Adapted from PDF pages 2–3. The goal is an explanation that supports a checkab
 
 Name exactly what is inside the model and what belongs to its environment. List inputs, relevant initial state, and the observable output. Distinguish the intended purpose, direct output, and downstream effect. For natural phenomena, describe the relationship under study rather than assigning an intended purpose.
 
-A thermostat's control logic takes a measurement and setpoint and produces an on/off command. A heater converts an energy supply into heat transfer. A model including the heater and room can instead observe room temperature over time. Sending the command does not guarantee the downstream temperature change.
+A thermostat's control logic takes a measurement and setpoint and produces an on/off command. If the sensor is brought inside the boundary, its measurement becomes an internal signal and the device responds to the surrounding temperature. A heater converts an energy supply into heat transfer. A model including the heater and room can instead observe room temperature over time. Sending the command does not guarantee the downstream temperature change.
 
 Outputs can be messages, movement, heat, file changes, or measurements of state; they need not be a function return value. State captures relevant history. A two-threshold thermostat can be on or off at the same measured temperature, depending on its previous command. Changing the boundary requires redefining inputs and outputs.
 
@@ -20,4 +20,4 @@ Outputs can be messages, movement, heat, file changes, or measurements of state;
 
 For a heating model, consider whether heating power exceeds heat loss, whether heat continues flowing after switch-off, and where the sensor sits. Negative feedback counteracts change but does not by itself guarantee stability. A sensor next to the heater may reach a threshold before the rest of the room is warm; temperatures at both locations could check that prediction.
 
-**Output:** the bounded model, one worked trace, an explicit uncertainty, and a prediction with a feasible check. A matching prediction supports the model without proving its proposed mechanism. If remembering the explanation is part of the goal, suggest reconstructing it after a delay; do not add a memory drill to every problem.
+**Output:** the bounded model, one worked trace, any genuine gaps found, and a prediction with a feasible check. A matching prediction supports the model without proving its proposed mechanism. If remembering the explanation is part of the goal, suggest reconstructing it without looking after a few days; do not add a memory drill to every problem.

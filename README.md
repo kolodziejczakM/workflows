@@ -18,9 +18,9 @@ Installs all required skills into `.agents/skills/`, with Claude Code links. No 
 $think-through I am choosing between moving closer to work and keeping more space. Help me work through the tradeoffs.
 ```
 
-It identifies what blocks your answer, recommends a tool/strategy, explains why the closest alternatives fit less well, and starts applying it. It covers understanding, explanations, estimates/forecasts, and decisions, adding analogy, systems thinking, premortems, or Bayesian updating when useful. For decisions and predictions, it records a conclusion, key assumption, next step, and review trigger.
+It identifies what blocks your answer, recommends a tool/strategy, explains why the closest alternatives fit less well, and starts applying it. It covers understanding, explanations, estimates/forecasts, and decisions, adding analogy, systems thinking, premortems, or Bayesian updating when useful. Each completed exercise records a conclusion, key assumption, next step, and when to check the result.
 
-This is an English adaptation of your thinking-tools framework. It works in chat without Matt/pstack setup and does not start coding or create a PR. You can install it alone by replacing `--skill '*'` with `--skill think-through` above. Use `/think-through` in Claude Code/Cursor, or `/workflows:think-through` with the Claude plugin.
+This is an English adaptation of your thinking-tools framework; the [original PDF](docs/sources/thinking-framework-2026-10-19.pdf) is archived for source audits and excluded from installed skills. It works in chat without Matt/pstack setup and does not start coding or create a PR. You can install it alone by replacing `--skill '*'` with `--skill think-through` above. Use `/think-through` in Claude Code/Cursor, or `/workflows:think-through` with the Claude plugin.
 
 ## Coding workflows
 

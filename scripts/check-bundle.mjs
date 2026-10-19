@@ -9,6 +9,8 @@ const ledger = await readJson('upstream-files.json');
 const lock = await readJson('skills-lock.json');
 const packageInfo = await readJson('package.json');
 const localSkills = new Set(packageInfo.config.localSkills);
+const thinkingSource = await readJson('docs/sources/thinking-framework.json');
+assert.equal(sha256(await readFile(join(root, 'docs/sources', thinkingSource.file))), thinkingSource.sha256, 'Archived thinking-framework PDF differs from its recorded source');
 
 for (const [path, record] of Object.entries(ledger.files)) {
   const data = await readFile(join(root, path));
@@ -59,4 +61,4 @@ for (const path of ['.claude-plugin/marketplace.json', '.agents/plugins/marketpl
   const pluginSource = marketplace.plugins[0].source;
   assert.equal(typeof pluginSource === 'string' ? pluginSource : pluginSource.path, './');
 }
-console.log(`PASS: ${actual.length} published skills, ${Object.keys(ledger.files).length} files matching recorded upstream snapshots, local references, pinned dependencies, and plugin metadata.`);
+console.log(`PASS: ${actual.length} published skills, ${Object.keys(ledger.files).length} files matching recorded upstream snapshots, local references, pinned dependencies, archived source identity, and plugin metadata.`);
