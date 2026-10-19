@@ -1,4 +1,4 @@
 interface:
   display_name: "Think Through"
   short_description: "Choose thinking tools and work through the problem"
-  default_prompt: "Use $think-through to select and apply a reasoning strategy for my problem, explaining why the closest alternatives fit less well."
+  default_prompt: "Use $think-through to work through my problem, making the evidence, blocking uncertainty, and next useful step clear."

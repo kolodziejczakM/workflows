@@ -4,7 +4,7 @@ Reviewed on 19 October 2026 against the user's [original six-page PDF](sources/t
 
 The review covered the complete source and all runtime instruction files: `SKILL.md`, `references/understanding.md`, `references/tools.md`, `references/source.md`, and `agents/openai.yaml`. README usage claims were also checked. The source was read in Polish; the implementation remains English.
 
-## Coverage
+## Coverage of the initial adaptation
 
 | Source | English implementation and meaning checked |
 | --- | --- |
@@ -33,7 +33,9 @@ The audit also clarified direct fact checking, the broader use of structural ana
 
 ## Interface and archive policy
 
-English skill files, automatic method selection, concise reasons for rejected alternatives, and chat-first use implement the user's requested interface. Later feedback supersedes the initial English-output default: replies now follow the user's language. It also adds method names without PDF tool numbers, one or two immediately usable first-round steps, and next-round follow-up on a still-critical unverified assumption. These are explicit user-requested interface additions, not claims about extra requirements in the PDF. They preserve the source's method steps, stopping criteria, and four completion results. Illustrations may be shortened; they must retain their assumptions and meaning.
+English skill files, automatic method selection, and chat-first use implement the user's requested interface. Later feedback supersedes the initial English-output default: replies now follow the user's language. It also adds a brief first-response method name without PDF tool numbers, immediate first-round steps, and next-round follow-up on a still-critical unverified assumption. These are explicit user-requested interface additions, not claims about extra requirements in the PDF.
+
+On 20 October, the user approved conditional analysis maps showing evidence, its basis, a blocker, and a next step with what it would resolve. Presentation details are disclosed only when a map is needed. Compulsory nearby-method comparisons are replaced by the actual obstacle and next useful step; comparisons remain available when useful or requested. The agent retains mechanism reconstruction, changed-case predictions, and hypothesis-specific tests, while unsolicited recall practice is omitted. This explicitly supersedes the optional recall suggestion recorded in the initial coverage table above. Evidence distinctions, stopping criteria, and all four completion results remain, with duplication removed between the map and prose. Illustrations must retain their assumptions and meaning; the archived PDF is unchanged.
 
 The Polish PDF is maintainer-only provenance in `docs/sources/`. Agents ordinarily use the English skill and chosen reference. The PDF is neither installed as a skill nor copied into the plugin payload; source audits and translation maintenance are the occasions to consult it. `npm run check` verifies its checksum, not the quality of the translation. Future instruction changes still require this semantic comparison.
 
