@@ -1,10 +1,10 @@
-# Verified AI workflows
+# AI workflows for thinking and building
 
-Matt Pocock workflows followed by proof in the running application, with relevant pstack risk/review and Emil Kowalski UI checks. Upstream files stay unchanged.
+Two independent entry points: `think-through` helps you choose and apply thinking tools; `workflow` combines Matt Pocock coding flows with real application proof and relevant pstack/Emil checks. Upstream files stay unchanged.
 
-## Install in your application repository
+## Install in a repository
 
-Once this bundle is merged into the default branch, run from the **client application repository**:
+Run from the repository where you want the skills:
 
 ```bash
 npx --yes skills@1.7.2 add kolodziejczakM/workflows --skill '*' --agent codex cursor claude-code --yes
@@ -12,7 +12,17 @@ npx --yes skills@1.7.2 add kolodziejczakM/workflows --skill '*' --agent codex cu
 
 Installs all required skills into `.agents/skills/`, with Claude Code links. No manual clone needed. Private repositories require GitHub access through your configured Git credentials. Keep only your runtimes in the command, then start a new agent session.
 
-## Typical workflows
+## Think through a problem
+
+```text
+$think-through I am choosing between moving closer to work and keeping more space. Help me work through the tradeoffs.
+```
+
+It identifies what blocks your answer, recommends a tool/strategy, explains why the closest alternatives fit less well, and starts applying it. It covers understanding, explanations, estimates/forecasts, and decisions, adding analogy, systems thinking, premortems, or Bayesian updating when useful. For decisions and predictions, it records a conclusion, key assumption, next step, and review trigger.
+
+This is an English adaptation of your thinking-tools framework. It works in chat without Matt/pstack setup and does not start coding or create a PR. You can install it alone by replacing `--skill '*'` with `--skill think-through` above. Use `/think-through` in Claude Code/Cursor, or `/workflows:think-through` with the Claude plugin.
+
+## Coding workflows
 
 In Codex, use the examples below. In Claude Code or Cursor, replace `$workflow` with `/workflow`.
 

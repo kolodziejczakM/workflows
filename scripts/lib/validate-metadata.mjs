@@ -20,9 +20,12 @@ export function validateSkill(text, directoryName) {
   assert(metadata.name.length <= 64, `Skill name too long: ${directoryName}`);
   assert(typeof metadata.description === 'string' && metadata.description.trim().length > 0
     && metadata.description.length <= 1024, `Invalid description: ${directoryName}`);
-  if (directoryName === 'workflow') {
-    const allowed = new Set(['name', 'description', 'license', 'allowed-tools', 'metadata']);
-    assert(Object.keys(metadata).every((key) => allowed.has(key)), 'Unexpected workflow frontmatter property');
-    assert(!metadata.description.startsWith('[TODO:'), 'Unfinished workflow description');
-  }
+  return metadata;
+}
+
+export function validateOwnedSkill(text, directoryName) {
+  const metadata = validateSkill(text, directoryName);
+  const allowed = new Set(['name', 'description', 'license', 'allowed-tools', 'metadata']);
+  assert(Object.keys(metadata).every((key) => allowed.has(key)), `Unexpected ${directoryName} frontmatter property`);
+  assert(!metadata.description.startsWith('[TODO:'), `Unfinished ${directoryName} description`);
 }

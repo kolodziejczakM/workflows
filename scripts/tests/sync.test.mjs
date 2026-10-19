@@ -11,6 +11,8 @@ async function syncFixture(t) {
   await cp(join(root, 'scripts'), join(client, 'scripts'), { recursive: true });
   const source = { id: 'example', repository: 'example/skills', ref: 'a'.repeat(40), licensePath: 'LICENSE', skills: ['current'] };
   await put('upstreams.json', JSON.stringify({ sources: [source] }));
+  await put('package.json', JSON.stringify({ config: { localSkills: ['workflow', 'think-through'] } }));
+  for (const name of ['workflow', 'think-through']) await put(`skills/${name}/SKILL.md`, `Local ${name} instructions`);
   await put('skills-lock.json', JSON.stringify({ skills: { current: { source: source.repository, ref: source.ref, skillPath: 'skills/current/SKILL.md' } } }));
   const skill = '---\nname: current\ndescription: Example\n---\nCurrent instructions\n';
   const license = 'Fixture license\n';
@@ -47,6 +49,12 @@ test('sync retires deselected exports and support, preserves custom files, and r
   await assert.rejects(access(join(client, 'skills/workflow/references/upstream/example/skills/retired')), { code: 'ENOENT' });
   assert.equal(await readFile(join(client, 'skills/custom-retired/CUSTOM.md'), 'utf8'), 'user-owned');
   assert.equal(await readFile(join(client, 'skills/current/SKILL.md'), 'utf8'), skill);
+  for (const name of ['workflow', 'think-through']) {
+    assert.equal(await readFile(join(client, `skills/${name}/SKILL.md`), 'utf8'), `Local ${name} instructions`);
+    assert.equal(await readFile(join(client, `skills/${name}/LICENSE.txt`), 'utf8'), 'Fixture license\n');
+    assert.equal(await readFile(join(client, `.agents/skills/${name}/SKILL.md`), 'utf8'), `Local ${name} instructions`);
+    assert.equal(await readFile(join(client, `.claude/skills/${name}/SKILL.md`), 'utf8'), `Local ${name} instructions`);
+  }
   const ledger = await readFile(join(client, 'upstream-files.json'), 'utf8');
   assert(!ledger.includes('retired'));
   await put('skills/current/SKILL.md', 'local modification');

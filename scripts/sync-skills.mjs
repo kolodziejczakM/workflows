@@ -6,6 +6,7 @@ import { retireImports } from './lib/retire-imports.mjs';
 import { download, fetchPinnedBlobs } from './lib/upstream.mjs';
 
 const config = await readJson('upstreams.json');
+const { config: { localSkills } } = await readJson('package.json');
 const ledgerPath = join(root, 'upstream-files.json');
 const ledger = { version: 1, files: {} };
 const staged = new Map();
@@ -114,21 +115,24 @@ for (const [target, { data, mode }] of staged) {
 ledger.files = Object.fromEntries(Object.entries(ledger.files).sort(([left], [right]) => left.localeCompare(right)));
 await writeFile(ledgerPath, `${JSON.stringify(ledger, null, 2)}\n`);
 await writeFile(join(root, 'THIRD_PARTY_NOTICES.md'), `${notices.join('\n').trimEnd()}\n`);
-await writeFile(join(root, 'skills/workflow/LICENSE.txt'), await readFile(join(root, 'LICENSE')));
-for (const [path, target] of [
-  ['.agents/skills/workflow', '../../skills/workflow'],
-  ['.claude/skills/workflow', '../../.agents/skills/workflow']
-]) {
-  const absolute = join(root, path);
-  try {
-    const info = await lstat(absolute);
-    if (!info.isSymbolicLink() || await readlink(absolute) !== target) {
-      throw new Error(`Refusing to replace an existing custom workflow installation: ${path}`);
+const localLicense = await readFile(join(root, 'LICENSE'));
+for (const name of localSkills) {
+  await writeFile(join(root, `skills/${name}/LICENSE.txt`), localLicense);
+  for (const [path, target] of [
+    [`.agents/skills/${name}`, `../../skills/${name}`],
+    [`.claude/skills/${name}`, `../../.agents/skills/${name}`]
+  ]) {
+    const absolute = join(root, path);
+    try {
+      const info = await lstat(absolute);
+      if (!info.isSymbolicLink() || await readlink(absolute) !== target) {
+        throw new Error(`Refusing to replace an existing custom workflow installation: ${path}`);
+      }
+    } catch (error) {
+      if (error.code !== 'ENOENT') throw error;
+      await mkdir(dirname(absolute), { recursive: true });
+      await symlink(target, absolute, 'dir');
     }
-  } catch (error) {
-    if (error.code !== 'ENOENT') throw error;
-    await mkdir(dirname(absolute), { recursive: true });
-    await symlink(target, absolute, 'dir');
   }
 }
 console.log(`Exported ${config.sources.flatMap((source) => source.skills).length} upstream skills; verified ${Object.keys(ledger.files).length} files against pinned Git blobs.`);

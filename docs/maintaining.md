@@ -1,6 +1,6 @@
 # Maintaining the bundle
 
-`skills/` is the published catalog. `.agents/skills/` and `.claude/skills/` are ignored local installations. `upstreams.json` selects immutable upstream revisions and exports; `skills-lock.json` records the Skills CLI installations. `upstream-files.json` records the upstream Git blob and SHA-256 of each imported file.
+`skills/` is the published catalog. `package.json` lists project-owned entry points in `config.localSkills`; checks and sync use that list for local licenses and development links. Add a local skill there without changing the upstream selection. `.agents/skills/` and `.claude/skills/` are ignored local installations. `upstreams.json` selects immutable upstream revisions and exports; `skills-lock.json` records the Skills CLI installations. `upstream-files.json` records the upstream Git blob and SHA-256 of each imported file.
 
 Run with Node.js 22 or newer:
 
