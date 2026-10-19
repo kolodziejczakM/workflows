@@ -28,9 +28,11 @@ Installs only `think-through` for your user account, available across repositori
 $think-through I am choosing between moving closer to work and keeping more space. Help me work through the tradeoffs.
 ```
 
-It identifies what blocks your answer, recommends a tool/strategy, explains why the closest alternatives fit less well, and starts applying it. It covers understanding, explanations, estimates/forecasts, and decisions, adding analogy, systems thinking, premortems, or Bayesian updating when useful. Each completed exercise records a conclusion, key assumption, next step, and when to check the result.
+It identifies what blocks your answer, chooses a suitable strategy, and starts applying it. It covers understanding, explanations, estimates/forecasts, and decisions, adding analogy, systems thinking, premortems, or Bayesian updating when useful. Alternatives are discussed when they clarify the choice or you ask. Each completed exercise records a conclusion, key assumption, next step, and when to check the result.
 
 It replies in your language. In the first response, it names the chosen thinking tool and explains why it fits in one sentence, without PDF tool numbers, then gives one or two steps you can take immediately. It does not repeat the introduction on later turns. In the next round, it follows up on the critical assumption if it remains unverified.
+
+For complex or uncertain problems, it shows a compact analysis map: the question, evidence and its basis, blocking unknown, and next step with what it would resolve. The map updates when evidence or the recommendation changes and is skipped for simple answers. It uses a table or diagram without extra quizzes or setup; `show-me` is optional. This presentation has not been shown to improve human understanding or answer quality.
 
 This is an English adaptation of your thinking-tools framework; the [original PDF](docs/sources/thinking-framework-2026-10-19.pdf) is archived for source audits and excluded from installed skills. It works in chat without Matt/pstack setup and does not start coding or create a PR. For a repository-local install of this skill alone, replace `--skill '*'` with `--skill think-through` in the repository installation command. Use `/think-through` in Claude Code/Cursor, or `/workflows:think-through` with the Claude plugin.
 

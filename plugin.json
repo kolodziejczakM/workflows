@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "workflows",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Guided thinking and Matt Pocock coding workflows with application verification",
   "author": {"name": "kolodziejczakM"},
   "repository": "https://github.com/kolodziejczakM/workflows",

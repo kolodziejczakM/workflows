@@ -1,6 +1,6 @@
 ---
 name: think-through
-description: Help think through a problem by choosing and applying a suitable reasoning strategy, explaining why nearby alternatives fit less well, and revisiting the choice as evidence changes. Use for understanding mechanisms, explaining observations, estimating or forecasting, and comparing decisions or designs.
+description: Help think through a problem by choosing and applying a suitable reasoning strategy and making the evidence, blocking uncertainty, and next step clear. Use for understanding mechanisms, explaining observations, estimating or forecasting, and comparing decisions or designs.
 ---
 
 # Think through a problem
@@ -35,13 +35,15 @@ When supplied rules already explain an observation and the user wants to learn t
 
 Treat mixed cases as a sequence: address the blocking uncertainty first, then reassess. For example, investigate causes before ranking fixes when their effectiveness depends on the cause. If no comparable cases exist, say the outside-view check is unavailable and use an explicitly assumption-based decomposition; do not invent a base rate.
 
-## 3. Explain the selection and start using it
+## 3. Apply the strategy and show the analysis state
 
-In the first response, explicitly name the chosen primary thinking tool and explain why it fits the user's problem in one sentence. Use the tool's name in the user's language, without its PDF number. Briefly contrast the closest alternatives, usually two; one is enough when only one is credible. For each, state why it is less useful **now** and when it would become useful. A sentence can cover the comparison; reserve tables for substantive tradeoffs. Continue the exercise on later turns without repeating the tool announcement or touring the toolbox; explain necessary strategy changes briefly as described below.
+In the first response, name the chosen primary thinking tool and explain why it addresses the current obstacle in one sentence, in the user's language and without its PDF number. Discuss alternatives only when they clarify a consequential choice or the user asks. On later turns, focus on what changed and the next useful step without repeating the tool announcement.
 
 Apply the method to the supplied problem in the same response. Show the useful model, calculation, comparison, hypotheses, or test proposal, rather than stopping at tool names. Where a decisive input is missing, produce the supported portion and ask the next focused question. Explain assumptions and decision-relevant reasoning concisely; a long internal reasoning transcript is not the deliverable.
 
 In the first round, include one or two concrete steps the user can take immediately alongside the options or method recommendation. These can be an opening exercise or an evidence check feasible with the available information; include them even when the user only asks which method to use.
+
+**Analysis map:** When there are dependent stages, competing explanations, or consequential uncertainty, read [analysis-map.md](references/analysis-map.md) and show a compact view of the question, evidence and its basis, blocker, and next step with what it would resolve. Use available information; distinguish observations, assumptions, predictions, and proposed versus completed tests. Update after a material change and briefly explain why; skip the map for simple answers. Use one view instead of duplicating it in prose or a closing summary. The map must not introduce extra questions, comprehension quizzes, recall exercises, or requests for the user to predict an outcome; ask only substantive questions that change the analysis.
 
 For a request only to select a method, stop after the recommendation and opening steps. Otherwise make one useful first pass, then ask the next focused question if further progress needs an answer; close when the result has enough support for the task. Defer additional exercises and comparisons until their inputs are available; ask several questions together only when the answers need to be considered jointly. Keep the user's values and choices visible rather than supplying invented preferences. Respond in the language of the user's message unless they request another language.
 
@@ -55,7 +57,7 @@ Carry forward the most consequential unverified assumption in the current conver
 
 Stop when the answer has enough support for the user's purpose, or when further progress depends on a specific missing observation or user preference. Consider whether more information could change the decision enough to justify its cost; avoid an exhaustive tour of the toolbox.
 
-When ending an exercise, record these four results for any route, including explanations and calculations. They can be combined into a concise paragraph:
+When ending an exercise, record these four results for any route, including explanations and calculations. They can be combined into a concise paragraph or an existing map; include each once rather than add a duplicate closing summary:
 
 - **Conclusion:** what is supported, or the conditional recommendation.
 - **Key assumption:** the uncertain fact or preference most likely to change it.
