@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import { readJson } from '../lib/bundle.mjs';
-import { validatePlugin, validateSkill } from '../lib/validate-metadata.mjs';
+import { validatePlugin, validateSkill, validateOwnedSkill } from '../lib/validate-metadata.mjs';
 
 test('portable schema accepts the manifest and rejects host-only fields and wrong types', async () => {
   const manifest = await readJson('plugin.json');
@@ -14,4 +14,12 @@ test('skill validation rejects malformed YAML, mismatched names and missing desc
   assert.throws(() => validateSkill('---\nname: [\n---\nBody', 'workflow'));
   assert.throws(() => validateSkill('---\nname: other\ndescription: Example\n---\nBody', 'workflow'));
   assert.throws(() => validateSkill('---\nname: workflow\n---\nBody', 'workflow'));
+});
+
+test('owned skill validation applies the same policy to each local workflow', async () => {
+  const { config: { localSkills } } = await readJson('package.json');
+  for (const name of localSkills) {
+    validateOwnedSkill(`---\nname: ${name}\ndescription: A complete description\n---\nInstructions`, name);
+    assert.throws(() => validateOwnedSkill(`---\nname: ${name}\ndescription: Complete\nunknown-field: true\n---\nInstructions`, name), /frontmatter property/);
+  }
 });

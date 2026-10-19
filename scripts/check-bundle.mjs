@@ -2,11 +2,15 @@ import assert from 'node:assert/strict';
 import { access, readFile, readdir } from 'node:fs/promises';
 import { dirname, join, resolve } from 'node:path';
 import { root, readJson, blobHash, sha256, findPinnedSkill } from './lib/bundle.mjs';
-import { validatePlugin, validateSkill } from './lib/validate-metadata.mjs';
+import { validatePlugin, validateSkill, validateOwnedSkill } from './lib/validate-metadata.mjs';
 
 const config = await readJson('upstreams.json');
 const ledger = await readJson('upstream-files.json');
 const lock = await readJson('skills-lock.json');
+const packageInfo = await readJson('package.json');
+const localSkills = new Set(packageInfo.config.localSkills);
+const thinkingSource = await readJson('docs/sources/thinking-framework.json');
+assert.equal(sha256(await readFile(join(root, 'docs/sources', thinkingSource.file))), thinkingSource.sha256, 'Archived thinking-framework PDF differs from its recorded source');
 
 for (const [path, record] of Object.entries(ledger.files)) {
   const data = await readFile(join(root, path));
@@ -15,7 +19,7 @@ for (const [path, record] of Object.entries(ledger.files)) {
   assert(config.sources.some((source) => source.repository === record.repository && source.ref === record.ref), `Unknown source: ${path}`);
 }
 
-const expected = ['workflow', ...config.sources.flatMap((source) => source.skills)].sort();
+const expected = [...localSkills, ...config.sources.flatMap((source) => source.skills)].sort();
 const actual = (await readdir(join(root, 'skills'), { withFileTypes: true })).filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();
 assert.deepEqual(actual, expected, 'Published skill catalog differs from the selected set');
 assert(!Object.keys(ledger.files).some((path) => path.startsWith('skills/workflow/references/') && path.endsWith('/SKILL.md')), 'Reference-only support must not register additional skills');
@@ -23,8 +27,8 @@ assert(!Object.keys(ledger.files).some((path) => path.startsWith('skills/workflo
 for (const name of actual) {
   const path = join(root, 'skills', name, 'SKILL.md');
   const text = await readFile(path, 'utf8');
-  validateSkill(text, name);
-  await access(join(dirname(path), name === 'workflow' ? 'LICENSE.txt' : 'UPSTREAM-LICENSE.txt'));
+  (localSkills.has(name) ? validateOwnedSkill : validateSkill)(text, name);
+  await access(join(dirname(path), localSkills.has(name) ? 'LICENSE.txt' : 'UPSTREAM-LICENSE.txt'));
   for (const match of text.matchAll(/\[[^\]]*\]\(([^\s)]+)\)/g)) {
     const target = match[1].split('#')[0];
     if (!target || /^[a-z]+:/i.test(target)) continue;
@@ -42,7 +46,6 @@ for (const source of config.sources) {
   }
 }
 
-const packageInfo = await readJson('package.json');
 for (const path of ['plugin.json', '.claude-plugin/plugin.json', '.codex-plugin/plugin.json']) {
   const manifest = await readJson(path);
   if (path === 'plugin.json') validatePlugin(manifest);
@@ -58,4 +61,4 @@ for (const path of ['.claude-plugin/marketplace.json', '.agents/plugins/marketpl
   const pluginSource = marketplace.plugins[0].source;
   assert.equal(typeof pluginSource === 'string' ? pluginSource : pluginSource.path, './');
 }
-console.log(`PASS: ${actual.length} published skills, ${Object.keys(ledger.files).length} files matching recorded upstream snapshots, local references, pinned dependencies, and plugin metadata.`);
+console.log(`PASS: ${actual.length} published skills, ${Object.keys(ledger.files).length} files matching recorded upstream snapshots, local references, pinned dependencies, archived source identity, and plugin metadata.`);

@@ -1,6 +1,6 @@
 # Maintaining the bundle
 
-`skills/` is the published catalog. `.agents/skills/` and `.claude/skills/` are ignored local installations. `upstreams.json` selects immutable upstream revisions and exports; `skills-lock.json` records the Skills CLI installations. `upstream-files.json` records the upstream Git blob and SHA-256 of each imported file.
+`skills/` is the published catalog. `package.json` lists project-owned entry points in `config.localSkills`; checks and sync use that list for local licenses and development links. Add a local skill there without changing the upstream selection. `.agents/skills/` and `.claude/skills/` are ignored local installations. `upstreams.json` selects immutable upstream revisions and exports; `skills-lock.json` records the Skills CLI installations. `upstream-files.json` records the upstream Git blob and SHA-256 of each imported file.
 
 Run with Node.js 22 or newer:
 
@@ -33,3 +33,5 @@ Run that command from an isolated client, not this source repository. Verify dis
 The root portable `plugin.json` uses the standard fixed `skills/` directory. Its closed schema does not allow a `skills` field; the Claude/Codex compatibility manifests declare that host-specific path separately. The schema and Apache-2.0 license live under `scripts/schemas/`, with the pinned source in its notice. Validation dependencies and schema resources are development-only and are not copied into client skills.
 
 `npm test` exercises the actual sync export/retirement pipeline (`--installed`) with deterministic network fixtures plus deletion-boundary and metadata validation regressions. CI runs these tests, the offline catalog/schema checks, and plugin packaging. Historical app-agent evaluations in `docs/validation.md` remain manual observations rather than CI coverage.
+
+The thinking framework's immutable original is under `docs/sources/`, outside the skill catalog and plugin payload. `npm run check` verifies its recorded checksum. Before changing thinking instructions, use the original PDF and [fidelity review](think-through-fidelity.md) to compare every route, method, expected result, and caveat. A checksum proves source identity; semantic fidelity still requires review. The English files are the runtime instructions; the PDF is maintainer provenance, not a second prompt to load on ordinary runs.
