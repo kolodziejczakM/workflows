@@ -37,7 +37,7 @@ Treat mixed cases as a sequence: address the blocking uncertainty first, then re
 
 ## 3. Explain the selection and start using it
 
-On initial selection or a strategy change, give a short rationale: the obstacle, why the primary method addresses it, and the useful result. Briefly contrast the closest alternatives, usually two; one is enough when only one is credible. For each, state why it is less useful **now** and when it would become useful. A sentence can cover the comparison; reserve tables for substantive tradeoffs. Continue the exercise on later turns without repeating the method pitch or touring the toolbox.
+In the first response, explicitly name the chosen primary thinking tool and explain why it fits the user's problem in one sentence. Use the tool's name in the user's language, without its PDF number. Briefly contrast the closest alternatives, usually two; one is enough when only one is credible. For each, state why it is less useful **now** and when it would become useful. A sentence can cover the comparison; reserve tables for substantive tradeoffs. Continue the exercise on later turns without repeating the tool announcement or touring the toolbox; explain necessary strategy changes briefly as described below.
 
 Apply the method to the supplied problem in the same response. Show the useful model, calculation, comparison, hypotheses, or test proposal, rather than stopping at tool names. Where a decisive input is missing, produce the supported portion and ask the next focused question. Explain assumptions and decision-relevant reasoning concisely; a long internal reasoning transcript is not the deliverable.
 
