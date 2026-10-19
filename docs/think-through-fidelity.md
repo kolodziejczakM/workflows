@@ -33,7 +33,7 @@ The audit also clarified direct fact checking, the broader use of structural ana
 
 ## Interface and archive policy
 
-English interaction, automatic method selection, concise reasons for rejected alternatives, and chat-first use implement the user's requested interface. They do not replace the source's method steps or stopping criteria. Illustrations may be shortened; they must retain their assumptions and meaning.
+English skill files, automatic method selection, concise reasons for rejected alternatives, and chat-first use implement the user's requested interface. Later feedback supersedes the initial English-output default: replies now follow the user's language. It also adds method names without PDF tool numbers, one or two immediately usable first-round steps, and next-round follow-up on a still-critical unverified assumption. These are explicit user-requested interface additions, not claims about extra requirements in the PDF. They preserve the source's method steps, stopping criteria, and four completion results. Illustrations may be shortened; they must retain their assumptions and meaning.
 
 The Polish PDF is maintainer-only provenance in `docs/sources/`. Agents ordinarily use the English skill and chosen reference. The PDF is neither installed as a skill nor copied into the plugin payload; source audits and translation maintenance are the occasions to consult it. `npm run check` verifies its checksum, not the quality of the translation. Future instruction changes still require this semantic comparison.
 

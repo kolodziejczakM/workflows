@@ -15,7 +15,7 @@ Use the available description to make a provisional choice. Ask a focused questi
 
 ## 2. Select the smallest useful strategy
 
-Read the chosen route/tool section below before applying it. Begin with one primary method; add a companion when it resolves a concrete obstacle. The routes and tool numbers come from the supplied framework, not a scored diagnostic test.
+Read the chosen route/tool section below before applying it. Begin with one primary method; add a companion when it resolves a concrete obstacle. The routes and tool numbers come from the supplied framework, not a scored diagnostic test. Use descriptive method names in replies; keep the PDF's tool numbers internal.
 
 | What blocks the answer? | Starting strategy | Expected result |
 | --- | --- | --- |
@@ -41,13 +41,17 @@ On initial selection or a strategy change, give a short rationale: the obstacle,
 
 Apply the method to the supplied problem in the same response. Show the useful model, calculation, comparison, hypotheses, or test proposal, rather than stopping at tool names. Where a decisive input is missing, produce the supported portion and ask the next focused question. Explain assumptions and decision-relevant reasoning concisely; a long internal reasoning transcript is not the deliverable.
 
-For a request only to select a method, stop after the recommendation and a concrete opening exercise. Otherwise make one useful first pass, then ask the next focused question if further progress needs an answer; close when the result has enough support for the task. Defer additional exercises and comparisons until their inputs are available; ask several questions together only when the answers need to be considered jointly. Keep the user's values and choices visible rather than supplying invented preferences. Use English for the workflow's explanations and artifacts unless the user asks otherwise.
+In the first round, include one or two concrete steps the user can take immediately alongside the options or method recommendation. These can be an opening exercise or an evidence check feasible with the available information; include them even when the user only asks which method to use.
+
+For a request only to select a method, stop after the recommendation and opening steps. Otherwise make one useful first pass, then ask the next focused question if further progress needs an answer; close when the result has enough support for the task. Defer additional exercises and comparisons until their inputs are available; ask several questions together only when the answers need to be considered jointly. Keep the user's values and choices visible rather than supplying invented preferences. Respond in the language of the user's message unless they request another language.
 
 ## 4. Check the result and loop only when useful
 
 Use the selected method's output and pitfalls in [tools.md](references/tools.md), or the changed-case check in the understanding path. Keep observations, inferences, illustrative numbers, and untested predictions distinct. An analogy or plausible story generates a hypothesis; it does not establish a mechanism. A forecast scenario range is not a statistical confidence interval.
 
 If the next obstacle changes, explain the switch and select the method for that obstacle. If a test has not been run or new data is unavailable, leave the conclusion conditional and give the next evidence-gathering step. Do not simulate results to keep the loop moving.
+
+Carry forward the most consequential unverified assumption in the current conversation, together with what would check it. In the next round, use any evidence the user supplies; if the assumption remains critical and unverified, ask a focused question about it before refining the recommendation. If it cannot yet be checked, keep it explicitly unresolved and the conclusion conditional rather than repeating the same question. Retire or replace it when evidence or a changed problem warrants it; do not invent a critical assumption when none exists.
 
 Stop when the answer has enough support for the user's purpose, or when further progress depends on a specific missing observation or user preference. Consider whether more information could change the decision enough to justify its cost; avoid an exhaustive tour of the toolbox.
 
