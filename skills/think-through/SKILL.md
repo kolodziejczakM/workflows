@@ -1,5 +1,6 @@
 ---
 name: think-through
+disable-model-invocation: true
 description: Help think through a problem by choosing and applying a suitable reasoning strategy. Use only when the user explicitly invokes $think-through or asks to use the think-through skill.
 ---
 

@@ -25,7 +25,10 @@ export function validateSkill(text, directoryName) {
 
 export function validateOwnedSkill(text, directoryName) {
   const metadata = validateSkill(text, directoryName);
-  const allowed = new Set(['name', 'description', 'license', 'allowed-tools', 'metadata']);
+  const allowed = new Set(['name', 'description', 'license', 'allowed-tools', 'metadata', 'disable-model-invocation']);
   assert(Object.keys(metadata).every((key) => allowed.has(key)), `Unexpected ${directoryName} frontmatter property`);
+  if (Object.hasOwn(metadata, 'disable-model-invocation')) {
+    assert.equal(typeof metadata['disable-model-invocation'], 'boolean', `Invalid ${directoryName} disable-model-invocation: expected a boolean`);
+  }
   assert(!metadata.description.startsWith('[TODO:'), `Unfinished ${directoryName} description`);
 }
