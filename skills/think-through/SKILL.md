@@ -1,6 +1,6 @@
 ---
 name: think-through
-description: Help think through a problem by choosing and applying a suitable reasoning strategy and making the evidence, blocking uncertainty, and next step clear. Use for understanding mechanisms, explaining observations, estimating or forecasting, and comparing decisions or designs.
+description: Help think through a problem by choosing and applying a suitable reasoning strategy. Use only when the user explicitly invokes $think-through or asks to use the think-through skill.
 ---
 
 # Think through a problem

@@ -24,6 +24,8 @@ Installs only `think-through` for your user account, available across repositori
 
 ## Think through a problem
 
+Invoke this skill explicitly. In Codex, automatic selection is disabled with `policy.allow_implicit_invocation: false` in `skills/think-through/agents/openai.yaml`.
+
 ```text
 $think-through I am choosing between moving closer to work and keeping more space. Help me work through the tradeoffs.
 ```
