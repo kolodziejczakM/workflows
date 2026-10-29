@@ -2,3 +2,6 @@ interface:
   display_name: "Think Through"
   short_description: "Choose thinking tools and work through the problem"
   default_prompt: "Use $think-through to work through my problem, making the evidence, blocking uncertainty, and next useful step clear."
+
+policy:
+  allow_implicit_invocation: false

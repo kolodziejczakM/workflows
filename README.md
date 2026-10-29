@@ -24,6 +24,8 @@ Installs only `think-through` for your user account, available across repositori
 
 ## Think through a problem
 
+Invoke this skill explicitly. Automatic selection is disabled with `disable-model-invocation: true` in the `SKILL.md` frontmatter for Claude Code and `policy.allow_implicit_invocation: false` in `agents/openai.yaml` for Codex.
+
 ```text
 $think-through I am choosing between moving closer to work and keeping more space. Help me work through the tradeoffs.
 ```

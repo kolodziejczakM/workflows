@@ -23,3 +23,11 @@ test('owned skill validation applies the same policy to each local workflow', as
     assert.throws(() => validateOwnedSkill(`---\nname: ${name}\ndescription: Complete\nunknown-field: true\n---\nInstructions`, name), /frontmatter property/);
   }
 });
+
+test('owned skill invocation control accepts booleans and rejects other YAML types', () => {
+  const skill = (value) => `---\nname: think-through\ndescription: Work through a problem\ndisable-model-invocation: ${value}\n---\nInstructions`;
+  for (const value of ['true', 'false']) validateOwnedSkill(skill(value), 'think-through');
+  for (const value of ['"true"', 'null', '1', '[]', '{}']) {
+    assert.throws(() => validateOwnedSkill(skill(value), 'think-through'), /expected a boolean/);
+  }
+});
